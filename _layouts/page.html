@@ -5,13 +5,19 @@
   {% include head.html %}
   <body itemscope itemtype="http://schema.org/Article">
     {% include header.html %}
+
+    <div class="teaserimage">
+        <div class="teaserimage-image" {% if site.cover %}style="background-image: url({% if page.image %}{{ page.image }}{% endif %})"{% endif %}>
+            Article Image
+        </div>
+    </div>
     <main class="content" role="main">
       <article class="post">
-        {% if page.image %}
+        <!-- {% if page.image %} -->
         <div class="article-image">
-          <div class="post-image-image" style="background-image: url({% if page.image %}{{ page.image }}{% endif %})">
+          <!-- <div class="post-image-image" style="background-image: url({% if page.image %}{{ page.image }}{% endif %})">
             Article Image
-          </div>
+          </div> -->
           <div class="post-meta">
             <h1 class="post-title">{{ page.title }}</h1>
             <div class="cf post-meta-text">
