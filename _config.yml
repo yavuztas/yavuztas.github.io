@@ -14,7 +14,7 @@ logo: "/assets/images/avatar1.png"
 float_logo: false # true, false (default)
 
 # blog cover
-cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
+cover: "/assets/images/background_image.jpg"
 
 name: 'Yavuz Tas'
 author: 'Yavuz Tas'
@@ -23,7 +23,7 @@ author_image: "/assets/images/avatar1.png"
 paginate:	5
 
 url: "http://yavuztas.github.io" # the base hostname & protocol for your site
-baseurl: ""
+baseurl: "http://yavuztas.github.io"
 #used to display twitter cards
 #twitter_handle: '@yavuztas'
 
