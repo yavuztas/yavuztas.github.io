@@ -23,7 +23,7 @@ author_image: "/assets/images/avatar1.png"
 
 paginate:	5
 
-url: "http://yavuztas.github.io" # the base hostname & protocol for your site
+url: "https://yavuztas.dev" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
 #twitter_handle: '@yavuztas'
