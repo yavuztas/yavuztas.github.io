@@ -1,7 +1,9 @@
 ---
-layout: about
-title: My Comment Policy
+layout: page-simple
+title: Comment Policy
 permalink: /comment-policy/
+image: /assets/article_images/comment-policy/comment-policy.jpg
+image2: /assets/article_images/comment-policy/comment-policy-mobile.jpg
 ---
 ### Stay On-topic
 Be sure your topic matches the general idea of the article. For example, all discussions on programming should be related with programming or at least software development.

@@ -29,7 +29,7 @@ baseurl: ""
 #twitter_handle: '@yavuztas'
 
 #fill in disqus shortname to use disqus
-#disqus: disqus-shortname
+disqus: yavuztas-dev
 
 #google_analytics: UA-XXXXX-X
 
