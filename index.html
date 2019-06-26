@@ -6,6 +6,9 @@ layout: default
     <div class="teaserimage-image" {% if site.cover %}style="background-image: url({{ site.cover | prepend: site.baseurl }})"{% endif %}>
         Teaser Image
     </div>
+    <div class="teaserimage-image mobile" {% if site.cover_mobile %}style="background-image: url({{ site.cover_mobile | prepend: site.baseurl }})"{% endif %}>
+        Teaser Image
+    </div>
 </div>
 
 <header class="blog-header">

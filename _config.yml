@@ -16,6 +16,7 @@ float_logo: false # true, false (default)
 
 # blog cover
 cover: "/assets/images/java-blog-4.jpg"
+cover_mobile: "/assets/images/java-blog-4-mobile.jpg"
 
 name: 'Yavuz Tas'
 author: 'Yavuz Tas'
