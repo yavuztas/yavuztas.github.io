@@ -6,7 +6,10 @@
   <body itemscope itemtype="http://schema.org/Article">
 
     <div class="teaserimage">
-        <div class="teaserimage-image" background-image:"url({% if page.image %}{{ page.image }}{% endif %})">
+        <div class="teaserimage-image" {% if page.image %}style="background-image: url({{ page.image | prepend: site.baseurl }})"{% endif %}>
+            Article Image
+        </div>
+        <div class="teaserimage-image mobile" {% if page.image2 %}style="background-image: url({{ page.image2 | prepend: site.baseurl }})"{% endif %}>
             Article Image
         </div>
     </div>
@@ -23,14 +26,21 @@
               on
               <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
               <!-- , tagged on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}} -->
+              <div class="labelbox">
+                {% for c in page.categories %}
+                  <span class="label">{{ c }}</span>
+                {% endfor %}
+              </div>
+              <div class="post-reading-clone">
+                <span class="post-reading-time"></span> read
+              </div>
             </div>
           </div>
         </div>
         <br/>
-        <br/>
         <section class="post-content">
           <div class="post-reading">
-            <span class="post-reading-time"></span> read
+              <span class="post-reading-time"></span> read
           </div>
           <a name="topofpage"></a>
           {{content}}
@@ -39,12 +49,17 @@
           <section class="share">
             {% for social in site.social %}
               {% if social.share_url != null %}
-                <a class="icon-{{ social.icon }}" href="{{ social.share_url }}{% if social.share_title %}{{ social.share_title }}{{page.title | cgi_escape}}{% endif %}{{ social.share_link }}{{site.url}}{{site.baseurl}}{{page.id}}"
+                <a class="icon-{{ social.icon }}" title="{{social.share_desc}}" href="{{ social.share_url }}{% if social.share_title %}{{ social.share_title }}{{page.title | cgi_escape}}{% endif %}{{ social.share_link }}{{site.url}}{{site.baseurl}}{{page.id}}"
                   onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
                 <i class="fa fa-{{ social.icon }}"></i><span class="hidden">{{ social.icon }}</span>
                 </a>
               {% endif %}
             {% endfor %}
+          </section>
+          <section class="go-top">
+              <a class="icon-top" title="Go to top of the page" href="#topofpage">
+                  <i class="fa fa-arrow-up"></i>
+              </a>
           </section>
         </footer>
         <div class="bottom-teaser cf">
@@ -92,8 +107,8 @@
         Image
       </div>
       <div class="inner">
-        <h1 class="blog-title">{{ site.title }}</h1>
-        <h2 class="blog-description">{{ site.description }}</h2>
+        <h1 class="blog-title">{{ site.footer_title }}</h1>
+        <h2 class="blog-description">{{ site.footer_description }}</h2>
         <a href={{ "/" | prepend: site.baseurl }} class="btn">Back to Home</a>
       </div>
     </div>

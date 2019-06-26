@@ -1,18 +1,31 @@
 ---
-layout: page
+layout: about
 title: About
 permalink: /about/
-image: "/assets/images/background_image.jpg"
+image: "/assets/article_images/about/about.jpg"
+image2: "/assets/article_images/about/about-mobile.jpg"
 ---
+>The problem does not lie on technology but on design. I am a true believer in code quality and I believe clear code and correct design with enough time bring absolute quality on software development.
 
-A medium inspired Jekyll blog theme. The basic idea came from the Ghost theme
-[Readium 2.0](http://www.svenread.com/readium-ghost-theme/). I use mediator on my own blog [The Base](blog.base68.com).
+Let me tell you about myself...
 
-You can **download** the theme here:
-[https://github.com/dirkfabisch/mediator](https://github.com/dirkfabisch/mediator)
+In short, I am a passionate software developer who loves **java** technologies.
 
-You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+For more details about me, I am a hard-working, innovative software developer with active field experience since 2005, mostly specialized on back-end enterprise technologies using Java and Java EE. Have practical knowledge about solving problems using various design patterns and OOP techniques. I am highly skilled at Spring Framework, Spring Security, ORM frameworks especially JPA, Hibernate and a variety of backend related technologies as well as experienced about UI/UX technologies both server side rendered like JSF, Vaadin and client side rendered like Javascript, Jquery and frontend mvc frameworks like Angular, Aurelia. Also experienced and strictly tied with test driven development, issue tracking, continuous integration and source code management.
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+Among my recent achievements, I have successfully launched two startup projects and made great contributions to raise them as profiting and leading company in Turkey. Beyond that as a personal hobby I have great passion on game development and fill my spare time developing small but enjoyable games.
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+If you would like to know me better, do not hesitate to strike up a conversation with the any channel below:
+<p class="about-social">
+  {% for social in site.social %}
+    {% if social.url %}
+        <a class="icon-{{ social.icon }}" href="{{ social.url }}" title="{{ social.desc }}">
+          <i class="fa fa-{{ social.icon }}"></i>
+        </a>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+    {% endif %}
+  {% endfor %}
+  <a class="icon-email" href="mailto:{{ site.email }}" title="Send Email">
+    <i class="fa fa-envelope"></i>
+  </a>
+</p>

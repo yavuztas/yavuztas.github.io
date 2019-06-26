@@ -73,6 +73,17 @@ body
     bottom: 0
     z-index: 1
     text-indent: -9999px
+  @media(min-width: 700px)
+    .teaserimage-image
+      display: block
+    .teaserimage-image.mobile
+      display: none
+  @media(max-width: 700px)
+    .teaserimage-image
+      display: none
+    .teaserimage-image.mobile
+      display: block
+
 
 .blog-header
   width: 100%
@@ -130,7 +141,7 @@ body
 
 .content
   width: 100%
-  max-width: 640px
+  max-width: 800px
   margin: 0 auto
   @include box-sizing(border-box)
   @include respond-to(800)
@@ -170,7 +181,7 @@ body
         &:hover
           text-decoration: underline
 .container.featured
-  padding-bottom: 40px
+  padding-bottom: 20px
 
 .post-template .content
   max-width: 700px
@@ -200,6 +211,7 @@ body
       color: #333
 
 .post-reading
+  display: none !important
   position: absolute
   top: 10px
   right: 30px
@@ -216,7 +228,10 @@ body
 .tag-articleimage .post-reading
   color: rgba(255,255,255,0.9)
   text-shadow: 0px 1px 4px rgba(0,0,0,0.25), 0px 0px 1px rgba(0,0,0,0.5)
-
+.post-reading-clone
+  text-align: right
+  margin-right: 5px
+  margin-top: 5px
 .site-footer
   margin: 0 auto
   padding: $rs*3 0
@@ -232,6 +247,7 @@ body
     &:hover
       color: #333
 .post
+  margin-bottom: 20px
   .article-image
     position: absolute
     background-color: #000
@@ -310,10 +326,21 @@ body
       font-family: $font-sans
       white-space: nowrap
       text-overflow: ellipsis
+      .labelbox
+        float: right
+        .label
+            background: #eeeeff
+            padding: 2px 10px
+            border-radius: 15px
+            color: #333332
+            font-size: 14px
+            padding-bottom: 4px
+            margin: 0 2px
       a
         color: rgba(255,255,255,0.75)
         &:hover
           color: rgba(255,255,255,1)
+
     .fa-angle-down
       font-size: 32px
       margin: 64px auto 0
@@ -325,7 +352,12 @@ body
   .noarticleimage
     .post-meta
       font-family: $font-sans
-      padding-top: 60px
+    @media(min-width: 700px)
+      .post-meta
+        padding-top: 60px
+    @media(max-width: 700px)
+      .post-meta
+        padding-top: 10px
     .post-title
       font-weight: 700
       font-style: normal
@@ -357,6 +389,16 @@ body
       font-family: $font-sans
       white-space: nowrap
       text-overflow: ellipsis
+      .labelbox
+        float: right
+        .label
+            background: #eeeeff
+            padding: 2px 10px
+            border-radius: 15px
+            color: #333332
+            font-size: 14px
+            padding-bottom: 4px
+            margin: 0 2px
   .post-content
     width: 100%
     font-family: $font-serif
@@ -417,6 +459,22 @@ body
       margin: 30px auto
       border: 0px solid #ddd
       border-top: 1px solid #ddd
+    .filename
+      padding-top: 4px
+      margin: 0
+      margin-bottom: -2px !important
+      position: relative
+      background-color: #e1e1ff
+      color: lightgrey
+      border-top-left-radius: 3px
+      border-top-right-radius: 3px
+      margin-bottom: 0px
+      padding-left: 1em
+      font-family: Menlo,Monaco,Consolas,"Courier New",monospace
+      border-left: 0px
+      > p
+        font-size: 16px
+        font-style: normal
     blockquote
       margin: 0 0 30px
       margin-left: -26px
@@ -446,6 +504,9 @@ body
         padding: 0 0 golden-ratio(1rem,  1)
     ol li
       list-style-type: decimal
+    .about-social
+      >a
+          text-decoration: none !important
   .bottom-teaser
     padding: 50px 0
     font-family: $font-sans
@@ -522,9 +583,9 @@ body
           padding-bottom: 18px
           font-weight: 700
           color: #333
-.share
-  text-align: right
+.share, .go-top
   padding: 20px 0 0
+  display: inline
   a
     text-decoration: none
     color: #bbb
@@ -533,7 +594,9 @@ body
       display: none
     &:hover
       color: #333
-
+.go-top
+    float: right
+    padding: 0 20px 0 0 
 .bottom-closer
   width: 100%
   position: relative
@@ -559,7 +622,7 @@ body
     .blog-title
       margin: 0
       padding: 0 0 10px
-      font-size: 50px
+      font-size: 40px
       text-align: center
       font-weight: 700
       letter-spacing: -2px
@@ -615,6 +678,7 @@ code
 pre
   padding: 8px 12px
   overflow-x: scroll
+  margin: 0
   > code
     border: 0
     padding-right: 0
