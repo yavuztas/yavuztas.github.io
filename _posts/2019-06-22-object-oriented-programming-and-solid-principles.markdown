@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Object Oriented Programming and SOLID Principals"
+title:  "Object Oriented Programming and SOLID Principles"
 date:   2019-06-22 16:33:00
 categories: java spring
 image: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid-principles/header-java.png"
@@ -8,13 +8,13 @@ image2: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid
 ---
 One of the most popular programming paradigm is called **Object Oriented Programming**, generally abbreviated as OOP, suggests that **objects** should be used in computer programs. Objects are special structures in programming contain **data** in forms of their properties, also named as attributes. Besides they contain procedures which are responsible for altering this data. These are mostly called as functions.
 
-Luckily Java was born as an OOP language and provides many high level structures to its users formed by objects. Thus we do not need to worry about most of the low level operations. However there are further principals to learn in order to apply OOP correctly. These are widely known as solid principals in programming world. When we say solid they really form the **SOLID** :) It is a funny story about that our former computer scientists culminated into a mnemonic acronym for five OOP design principles intended to make software designs better and understandable.
+Luckily Java was born as an OOP language and provides many high level structures to its users formed by objects. Thus we do not need to worry about most of the low level operations. However there are further principles to learn in order to apply OOP correctly. These are widely known as solid principles in programming world. When we say solid they really form the **SOLID** :) It is a funny story about that our former computer scientists culminated into a mnemonic acronym for five OOP design principles intended to make software designs better and understandable.
 
-#### What are these SOLID principals?
-We have five principals each of them stands for each letter **S-O-L-I-D** which are *[Single Responsibility Principal](#single-responsibility-principal), [Open Closed Principal](#open-closed-principal), [Liskov Substitution Principal](#liskov-substitution-principle), [Interface Segregation Principal](#interface-segregation-principle) and [Dependency Inversion Principal](#dependency-inversion-principle).*
+#### What are these SOLID principles?
+We have five principles each of them stands for each letter **S-O-L-I-D** which are *[Single Responsibility Principle](#single-responsibility-principle), [Open Closed Principle](#open-closed-principle), [Liskov Substitution Principle](#liskov-substitution-principle), [Interface Segregation Principle](#interface-segregation-principle) and [Dependency Inversion Principle](#dependency-inversion-principle).*
 
-#### Single Responsibility Principal
-Single Responsibility Principal in software programming suggests that one should have only one single responsibility. We usually refer any module, class or function here. Hence from the OOP perspective it refers objects which can might be modules or classes mostly. By this way, one object can only modify one part of the software's specification. Objects trying to handle more than one responsibility will eventually ensue fragility and become impossible to maintain. Thus it is clearly seen that violation of this principal causes us the famous **God Object** anti-pattern in time.
+#### Single Responsibility Principle
+Single Responsibility Principle in software programming suggests that one should have only one single responsibility. We usually refer any module, class or function here. Hence from the OOP perspective it refers objects which can might be modules or classes mostly. By this way, one object can only modify one part of the software's specification. Objects trying to handle more than one responsibility will eventually ensue fragility and become impossible to maintain. Thus it is clearly seen that violation of this principle causes us the famous **God Object** anti-pattern in time.
 
 An example to indicate a violation of single responsibility problem:
 
@@ -58,10 +58,10 @@ loginManager.authenticate();
 
 {% endhighlight %}
 
-You can see [single responsibility principal](https://en.wikipedia.org/wiki/Single_responsibility_principle) in wikipedia for details.
+You can see [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle) in wikipedia for details.
 
-#### Open Closed Principal
-Open Closed Principal in software programming simply means that an ideal software application should be open for extensions but closed for modifications. Doing **modifications** here is thought for changing the existing codes of pre-made modules, classes, etc. On the other hand, what is mentioned when we say **extensions** is adding new classes, modules or even functions without touching the rest of the code base.
+#### Open Closed Principle
+Open Closed Principle in software programming simply means that an ideal software application should be open for extensions but closed for modifications. Doing **modifications** here is thought for changing the existing codes of pre-made modules, classes, etc. On the other hand, what is mentioned when we say **extensions** is adding new classes, modules or even functions without touching the rest of the code base.
 
 Some implications of modification:
 * Increase fragility, decrease maintainability.
@@ -129,7 +129,7 @@ Coffee coffee = new EspressoCoffee();
 coffee.taste();
 {% endhighlight %}
 
-You can see [open closed principal](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle) in wikipedia for details.
+You can see [open closed principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle) in wikipedia for details.
 #### Liskov Substitution Principle
 Liskov Substitution Principle suggests that objects in a software program should be replaceable with the instances of their subtypes without need to change properties of this objects. Another use case of interfaces transpires here, since we need a behavioral similarity between subtypes, also called as **strong behavioral subtyping**. Different behaviours can output different results so we need to group subtypes with the similar behaviour by using interfaces not to break our program's expected output.
 
@@ -198,7 +198,7 @@ for(Fish fish:pool){
 You can see [liskov substitution principle](https://en.wikipedia.org/wiki/Liskov_substitution_principle) in wikipedia for details.
 
 #### Interface Segregation Principle
-Interface Segregation Principle in a software simply tells us that instead of one general-purpose interface, it is better to use many client-specific ones. One obvious problem we can encounter when we violate this principal is the boilerplate invasion of meaningless, empty methods.
+Interface Segregation Principle in a software simply tells us that instead of one general-purpose interface, it is better to use many client-specific ones. One obvious problem we can encounter when we violate this principle is the boilerplate invasion of meaningless, empty methods.
 
 Let us show this problem with an example:
 
@@ -306,4 +306,4 @@ public class OperatingSystem {
 
 You can see [dependency inversion principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle) in wikipedia for details.
 
-After we explained OOP and the solid principals shortly we will go on *containers, inversion of control and dependency injection* and start explaining the fundamentals of Spring by giving examples how they are applied in Spring Framework.
+After we explained OOP and the solid principles shortly we will go on *containers, inversion of control and dependency injection* and start explaining the fundamentals of Spring by giving examples how they are applied in Spring Framework.

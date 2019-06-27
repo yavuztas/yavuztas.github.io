@@ -15,4 +15,4 @@ Note that in order to build and run sample codes in this project Java 8 is requi
 [https://github.com/yavuztas/java-spring-fundamentals](https://github.com/yavuztas/java-spring-fundamentals)
 
 ### Before Start
-First of all before we dive into Spring, one should get familiar with some basic programming principals which are highly accepted in Java world and moreover strictly followed in Spring Framework. By this way, I believe this guide will be much more effective and easily understandable. So I will start the first article with [object orient programming and solid principals]({{ site.url }}/java/spring/2019/06/22/object-oriented-programming-and-solid-principles.html) in my next post.
+First of all before we dive into Spring, one should get familiar with some basic programming principles which are highly accepted in Java world and moreover strictly followed in Spring Framework. By this way, I believe this guide will be much more effective and easily understandable. So I will start the first article with [object orient programming and solid principles]({{ site.url }}/java/spring/2019/06/22/object-oriented-programming-and-solid-principles.html) in my next post.
