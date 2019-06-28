@@ -8,13 +8,13 @@ image2: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid
 ---
 One of the most popular programming paradigm is called **Object Oriented Programming**, generally abbreviated as OOP, suggests that **objects** should be used in computer programs. Objects are special structures in programming contain **data** in forms of their properties, also named as attributes. Besides they contain procedures which are responsible for altering this data. These are mostly called as functions.
 
-Luckily Java was born as an OOP language and provides many high level structures to its users formed by objects. Thus we do not need to worry about most of the low level operations. However there are further principles to learn in order to apply OOP correctly. These are widely known as solid principles in programming world. When we say solid they really form the **SOLID** :) It is a funny story about that our former computer scientists culminated into a mnemonic acronym for five OOP design principles intended to make software designs better and understandable.
+Luckily Java was born as an OOP language and provides many high level structures to its users formed by objects. Thus we do not need to worry about most of the low level operations. However there are further principles to learn in order to apply OOP correctly. These are widely known as solid principles in programming world. When we say solid, this is because they literally form the **SOLID**. It is a funny story about that our former computer scientists culminated into a mnemonic acronym for five OOP design principles intended to make software designs better and understandable.
 
 #### What are these SOLID principles?
 We have five principles each of them stands for each letter **S-O-L-I-D** which are *[Single Responsibility Principle](#single-responsibility-principle), [Open Closed Principle](#open-closed-principle), [Liskov Substitution Principle](#liskov-substitution-principle), [Interface Segregation Principle](#interface-segregation-principle) and [Dependency Inversion Principle](#dependency-inversion-principle).*
 
 #### Single Responsibility Principle
-Single Responsibility Principle in software programming suggests that one should have only one single responsibility. We usually refer any module, class or function here. Hence from the OOP perspective it refers objects which can might be modules or classes mostly. By this way, one object can only modify one part of the software's specification. Objects trying to handle more than one responsibility will eventually ensue fragility and become impossible to maintain. Thus it is clearly seen that violation of this principle causes us the famous **God Object** anti-pattern in time.
+Single Responsibility Principle in software programming suggests that one should have only one single responsibility. We usually refer any module, class or function here. Hence from the OOP perspective it mostly refers objects which can be modules or classes. By this way, one object can only modify one part of the software's specification. Objects trying to handle more than one responsibility will eventually ensue fragility and become impossible to maintain. Thus it is clearly seen that violation of this principle causes us the famous [God Object](https://en.wikipedia.org/wiki/God_object){:target="blank"} anti-pattern in time.
 
 An example to indicate a violation of single responsibility problem:
 
@@ -44,21 +44,28 @@ if(LoginType.LOCAL_DB.equals(type)){
 
 So this code seems to start smelling like becoming a god object. Although it looks like a semi-god for now but it definitely intends to become bigger in time unless we do not stop it by **refactoring** like:
 
+>LoginManager.java
+{:.filename}
+
 {% highlight java %}
-// registering our manager implementations
-context.registerBean(LocalDBLoginManager.class);
-context.registerBean(RemoteDBLoginManager.class);
-context.registerBean(LdapLoginManager.class);
-context.registerBean(SocialLoginManager.class);
+public LoginManager() {
+    // registering our manager implementations
+    loginManagers.add(new LocalDBLoginManager());
+    loginManagers.add(new RemoteDBLoginManager());
+    loginManagers.add(new LdapLoginManager());
+    loginManagers.add(new SocialLoginManager());
+}
 
-// Assuming that a DI mechanism handled internally by application context
-// and returns the right implementation according to login type we need
-ILoginManager loginManager = context.getBean(ILoginManager.class);
-loginManager.authenticate();
-
+public void authenticate(User user, LoginType type) {
+    // getManager method returns the right implementation
+    // according to login type we need
+    ILoginManager loginManager = getManager(type);
+    loginManager.authenticate(user);
+}
 {% endhighlight %}
 
-You can see [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle) in wikipedia for details.
+You can check the source code from here: [LoginManager.java](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/srp/LoginManager.java){:target="blank"}<br/>
+Also you can see [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle){:target="blank"} in wikipedia for further details.
 
 #### Open Closed Principle
 Open Closed Principle in software programming simply means that an ideal software application should be open for extensions but closed for modifications. Doing **modifications** here is thought for changing the existing codes of pre-made modules, classes, etc. On the other hand, what is mentioned when we say **extensions** is adding new classes, modules or even functions without touching the rest of the code base.
