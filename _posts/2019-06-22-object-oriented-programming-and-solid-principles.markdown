@@ -6,17 +6,17 @@ categories: java spring
 image: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid-principles/header-java.png"
 image2: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid-principles/header-java-mobile.png"
 ---
-One of the popular programming paradigm is called **Object Oriented Programming**, generally abbreviated as OOP, suggests that **objects** should be used in computer programs. Objects are special structures in programming contain **data** in forms of their properties, also named as attributes. Besides they contain procedures which are responsible for altering this data. These are mostly called as functions.
+One of the popular programming paradigms is called **Object Oriented Programming**, generally abbreviated as OOP, suggests that **objects** should be used in computer programs. Objects are special structures in programming contain **data** in forms of their properties, also named as attributes. Besides they contain procedures that are responsible for altering this data. These are mostly called as functions.
 
-Luckily Java was born as an OOP language and provides many high level structures to its users formed by objects. Thus we do not need to worry about most of the low level operations. However there are further principles to learn in order to apply OOP correctly. These are widely known as solid principles in programming world. When we say solid, this is because they literally form the **SOLID**. It is a funny story about that our former computer scientists culminated into a mnemonic acronym for five OOP design principles intended to make software designs better and understandable.
+Happily, Java is a clean example for the OOP languages and provides many high-level structures to its users formed by objects. Thus we do not need to worry about most of the low-level operations. However, there are further principles to learn in order to apply OOP correctly. These are widely known as solid principles in the programming world. When we say solid, this is because they literally form the **SOLID**. It is a funny story about that our former computer scientists culminated in a mnemonic acronym for five OOP design principles intended to make software designs better and understandable.
 
 #### What are these SOLID principles?
 We have five principles each of them stands for each letter **S-O-L-I-D** which are *[Single Responsibility Principle](#single-responsibility-principle), [Open Closed Principle](#open-closed-principle), [Liskov Substitution Principle](#liskov-substitution-principle), [Interface Segregation Principle](#interface-segregation-principle) and [Dependency Inversion Principle](#dependency-inversion-principle).*
 
 #### Single Responsibility Principle
-Single Responsibility Principle in software programming suggests that one should have only one single responsibility. We usually refer any module, class or function here. Hence from the OOP perspective it mostly refers objects which can be modules or classes. By this way, one object can only modify one part of the software's specification. Objects trying to handle more than one responsibility will eventually ensue fragility and become impossible to maintain. Thus it is clearly seen that violation of this principle causes us the famous [God Object](https://en.wikipedia.org/wiki/God_object){:target="blank"} anti-pattern in time.
+Single Responsibility Principle in software programming suggests that one should have only one single responsibility. We usually refer any module, class or function here. Hence from the OOP perspective, it mostly refers to objects which can be modules or classes. In this way, one object can only modify one part of the software's specifications. Objects trying to handle more than one responsibility will eventually ensue fragility and become impossible to maintain. Thus it is clearly seen that violation of this principle causes us the famous [God Object](https://en.wikipedia.org/wiki/God_object){:target="blank"} anti-pattern in time.
 
-An example to indicate a violation of single responsibility problem:
+An example to indicate a violation of the single responsibility problem:
 
 >LoginManager.java
 {:.filename}
@@ -42,7 +42,7 @@ if(LoginType.LOCAL_DB.equals(type)){
 // and this conditional cases can go on...
 {% endhighlight %}
 
-So this code seems to start smelling like becoming a god object. Although it looks like a semi-god for now but it definitely intends to become bigger in time unless we do not stop it by **refactoring** like:
+So this code seems to start smelling like becoming a god object. Although it looks like a semi-god for now, it definitely intends to become bigger in time unless we do not stop it by **refactoring** like:
 
 >LoginManager.java
 {:.filename}
@@ -68,12 +68,12 @@ You can check the source code from here: [LoginManager.java](https://github.com/
 Also you can see [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle){:target="blank"} in wikipedia for further details.
 
 #### Open Closed Principle
-Open Closed Principle in software programming simply means that an ideal software application should be open for extensions but closed for modifications. Doing **modification** here is thought for changing the existing codes of pre-made modules, classes, etc. On the other hand, what is mentioned when we say **extension** is adding new classes, modules or even functions without touching the rest of the code base.
+Open Closed Principle in software programming simply means that an ideal software application should be open for extensions but closed for modifications. Doing **modification** here is thought for changing the existing codes of pre-made modules, classes, etc. On the other hand, what is mentioned when we say **extension** is adding new classes, modules or even functions without touching the rest of the codebase.
 
 Some implications of modification:
 * Increases fragility, decreases maintainability.
 * Causes strictly tight modules and classes.
-* Leads to unexpected bugs, especially in projects which does not have enough test coverage.
+* Leads to unexpected bugs, especially in projects which do not have enough test coverage.
 
 A clear example to show a piece of code which will probably need modifications later on:
 
@@ -101,7 +101,7 @@ if(ModificationType.LESS.equals(type)){
 // and this conditional cases can go on...
 {% endhighlight %}
 
-One proper solution to this problem is **Chain of Responsibility** pattern which is also a good example for design by extensions, can be achieved like the code below:
+One proper solution to this problem is **Chain of Responsibility** pattern which is also a good example of design by extensions, can be achieved like the code below:
 
 >ModificationManager.java
 {:.filename}
@@ -138,7 +138,7 @@ public boolean modifySystem(ModificationType type) {
 You can check the source code from here: [ModificationManager.java](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/ocp/ModificationManager.java){:target="blank"}
 
 #### How the OCP can be used in Java?
-One of the best practices is **programming to interface** when it comes to applying OCP into java. Programming to interface means to prefer using interfaces instead of concrete types unless you do not specifically need to. Interfaces are the contracts to expose the behaviour type of our program to the outer world. By the help of well defined interfaces you always have a chance to create new implementations and easily extend your project without affecting the world outside, which technically means adding extension. Hence we can say that interfaces really plays nice with the OCP.
+One of the best practices is **programming to interface** when it comes to applying OCP into java. Programming to interface means to prefer using interfaces instead of concrete types unless you do not specifically need to. Interfaces are the contracts to expose the behavior type of our program to the outer world. With the help of well-defined interfaces, you always have a chance to create new implementations and easily extend your project without affecting the world outside, which technically means adding an extension. Hence we can say that interfaces really play nice with the OCP.
 
 A simple example to show an advantage of using interfaces over concrete types:
 
@@ -162,9 +162,9 @@ Coffee coffee = new EspressoCoffee();
 coffee.taste();
 {% endhighlight %}
 
-You can see [open closed principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle) in wikipedia for further details.
+You can see [open closed principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle) in Wikipedia for further details.
 #### Liskov Substitution Principle
-Liskov Substitution Principle suggests that objects in a software program should be replaceable with the instances of their subtypes without need to change properties of their. Another use case of interfaces transpires here, since we need a behavioral similarity between subtypes, also called as **strong behavioral subtyping**. Different behaviours can output different results so we need to group subtypes with the similar behaviour by using interfaces not to break our program's expected output.
+Liskov Substitution Principle suggests that objects in a software program should be replaceable with the instances of their subtypes without need to change properties of theirs. Another use case of interfaces transpires here since we need a behavioral similarity between subtypes, also called as **strong behavioral subtyping**. Different behaviors can output different results so we need to group subtypes with similar behavior by using interfaces not to break our program's expected output.
 
 An example to demonstrate this problem:
 
@@ -181,7 +181,7 @@ public class DeadFish extends Fish {
     }
 }
 
-// Assume that we need a fishing pool which every Fish instance must swim.
+// Let's say that we need a fishing pool which every Fish instance should swim.
 // However as you can see some instances will not be able to swim because they are dead.
 List<Fish> pool = new ArrayList<>();
 pool.add(new Fish());
@@ -193,7 +193,7 @@ for(Fish fish:pool){
 }
 {% endhighlight %}
 
-An elegant solution comes with the help of interfaces to discriminate subtypes according to their behaviours:
+An elegant solution comes with the help of interfaces to discriminate subtypes according to their behaviors:
 
 {% highlight java %}
 public interface Alive {
@@ -239,10 +239,10 @@ for(Alive fish:pool){
 {% endhighlight %}
 
 You can check the source code from here: [FishingPool.java](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/lsp/FishingPool.java){:target="blank"}<br/>
-Also you can see [liskov substitution principle](https://en.wikipedia.org/wiki/Liskov_substitution_principle) in wikipedia for further details.
+Also you can see [liskov substitution principle](https://en.wikipedia.org/wiki/Liskov_substitution_principle) in Wikipedia for further details.
 
 #### Interface Segregation Principle
-Interface Segregation Principle in a software simply tells us that instead of one general-purpose interface, it is better to use many client-specific ones. One obvious problem we can encounter when we violate this principle is the boilerplate invasion of meaningless, empty methods.
+Interface Segregation Principle in software simply tells us that instead of one general-purpose interface, it is better to use many client-specific ones. One obvious problem we can encounter when we violate this principle is the boilerplate invasion of meaningless, empty methods.
 
 Let us show this problem with an example:
 
@@ -304,7 +304,7 @@ You can check the source code from here: [AnimalFarm.java](https://github.com/ya
 Also you can see [interface segregation principle](https://en.wikipedia.org/wiki/Interface_segregation_principle) in wikipedia for further details.
 
 #### Dependency Inversion Principle
-Dependency Inversion Principle states that in a software program high level objects should not depend on low level objects on the contrary both should depend abstractions. Not unlike, concrete classes should depend on abstractions not vice versa. After these abstract explanations let us be a little bit more explanatory.
+Dependency Inversion Principle states that in a software program high-level objects should not depend on low-level objects, on the contrary, both should depend on abstractions. Not unlike, concrete classes should depend on abstractions, not vice versa. After these abstract explanations let us be a little bit more explanatory.
 
 An example of a DIP violation:
 
@@ -322,7 +322,7 @@ public class OperatingSystem {
 }
 {% endhighlight %}
 
-Instead of depending concrete classes we should definitely make an abstraction by the help of interfaces and refactor our tiny operating system to accept only abstract services in order to initiate on os start up. See the code below:
+Instead of depending on concrete classes we should definitely make an abstraction by the help of interfaces and refactor our tiny operating system to accept only abstract services in order to initiate on the os startup. See the code below:
 
 {% highlight java %}
 public class HttpService implements IService {
@@ -360,4 +360,4 @@ public class OperatingSystem {
 You can check the source code from here: [OperatingSystem.java](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/dip/OperatingSystem.java){:target="blank"}<br/>
 Aldo you can see [dependency inversion principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle) in wikipedia for further details.
 
-After we explained OOP and the solid principles shortly we will go on *containers, inversion of control and dependency injection* and start explaining the fundamentals of Spring by giving examples how they are applied in Spring Framework.
+After we explained OOP and the solid principles shortly we will go on *containers, inversion of control and dependency injection* and start explaining the fundamentals of Spring by giving examples of how they are applied in Spring Framework.

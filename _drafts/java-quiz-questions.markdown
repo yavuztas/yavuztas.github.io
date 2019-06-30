@@ -7,7 +7,7 @@ tags: regular
 image: /assets/article_images/java-quiz-questions/java-quiz.jpg
 image2: /assets/article_images/java-quiz-questions/java-quiz-mobile.jpg
 ---
-Today I would like to share one of my repositories which is about some interesting java algorithm questions and my solutions to each seven questions implemented beside.
+Today I would like to share one of my repositories which is about some interesting java algorithm questions and my solutions to every seven questions implemented beside.
 
 These questions are;
 1. Path
