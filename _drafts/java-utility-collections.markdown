@@ -8,7 +8,7 @@ image: /assets/article_images/java-quiz-questions/java-quiz.jpg
 image2: /assets/article_images/java-quiz-questions/java-quiz-mobile.jpg
 ---
 ### 1. Overview
-One of the fluent APIs that Java 8 brings us, is the [Java 8 Stream Api](https://www.baeldung.com/java-8-streams), which provides a practical and minimal interface to code, especially with the help of [Java 8 lambdas](https://www.baeldung.com/java-8-lambda-expressions-tips).  
+One of the fluent APIs that Java 8 brings us, is the [Java 8 Stream API](https://www.baeldung.com/java-8-streams), which provides a practical and minimal interface to code, especially with the help of [Java 8 lambdas](https://www.baeldung.com/java-8-lambda-expressions-tips).
 
 Today, we are going to write a simple utility class for converting and modifying java collections with ease, by using the power of **Java 8 Streams**.
 
@@ -222,6 +222,6 @@ Now, run this code. We should see the outputs of the joined elements:
 apple, banana, orange, ...
 {% endhighlight %}
 ### 7. Conclusion
-In this tutorial, **we learned how to implement a simple utility class for collections by the help of Java 8 Stream Api**.
+In this tutorial, **we learned how to implement a simple utility class for collections by the help of Java 8 Stream API**.
 
 As always, all the code samples shown in this tutorial are available [over on GitHub](https://github.com).
