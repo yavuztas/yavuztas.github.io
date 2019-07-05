@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Some Java Algorithm Questions"
-date:   2014-11-30 14:34:25
+date:   2019-06-28 14:12:00
 categories: java algorithm
 tags: regular
 image: /assets/article_images/java-quiz-questions/java-quiz.jpg

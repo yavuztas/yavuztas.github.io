@@ -2,7 +2,7 @@
 layout: post
 title:  "Object Oriented Programming and SOLID Principles"
 date:   2019-06-22 16:33:00
-categories: java spring
+categories: java oop
 image: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid-principles/header-java.png"
 image2: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid-principles/header-java-mobile.png"
 ---
@@ -358,6 +358,6 @@ public class OperatingSystem {
 {% endhighlight %}
 
 You can check the source code from here: [OperatingSystem.java](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/dip/OperatingSystem.java){:target="blank"}<br/>
-Aldo you can see [dependency inversion principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle) in wikipedia for further details.
+Also you can see [dependency inversion principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle) in wikipedia for further details.
 
-After we explained OOP and the solid principles shortly we will go on *containers, inversion of control and dependency injection* and start explaining the fundamentals of Spring by giving examples of how they are applied in Spring Framework.
+After we explained OOP and the solid principles shortly we will go on *containers, inversion of control and dependency injection* by giving examples of how they are applied in our [next post]({{ site.url }}/java/oop/2019/07/04/continers-inversion-of-control-and-dependency-injection.html).
