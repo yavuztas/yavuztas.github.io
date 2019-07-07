@@ -7,7 +7,7 @@ tags: featured
 image: "/assets/article_images/2019-06-15-spring-fundamentals/header-spring.png"
 image2: "/assets/article_images/2019-06-15-spring-fundamentals/header-spring-mobile.png"
 ---
-I have been creating an educational repository that aims to provide fundamental information and code samples about **Java** and mainly focusing on **Spring Framework**. I intend to prepare this repository not only to refresh my knowledge but also for public benefit. So feel free to drop comments about your opinion and any contributions are welcome!
+I have created an educational repository that aims to provide fundamental information and code samples with **Java**. My project primarily focuses on **Spring Framework** and attempts to prepare such a repository not only to refresh potential knowledge and practice but also to contribute, for developing the open-source community. So feel free to drop comments about your opinion and any contributions are welcome!
 
 Please note that this guide does not like regular how-to guides explaining every detail from scratch. My goal is to touch every important topic about the core of the Spring Framework instead of writing about specific topics in detail. It is a collection of simple answers to the most common questions about the framework. Thus it might not be for totally beginners or the ones who do not have any experience with Spring Framework before.
 
