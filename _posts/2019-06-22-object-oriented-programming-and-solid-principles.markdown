@@ -3,12 +3,20 @@ layout: post
 title:  "Object Oriented Programming and SOLID Principles"
 date:   2019-06-22 16:33:00
 categories: java oop
+tags: featured
+excerpt: In this very first post, we will explain <b>Object Oriented Programming</b> and some basic principles of it both with definitions and code samples.
+description: One of the popular programming paradigms is called <b>Object Oriented Programming</b>, generally abbreviated as OOP, suggests that <b>objects</b> should be used in computer programs. Objects are special structures in programming contain <b>data</b> in forms of their properties, also named as attributes. Besides they contain procedures that are responsible for altering this data. These are mostly called as functions.
 image: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid-principles/header-java.png"
 image2: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid-principles/header-java-mobile.png"
 ---
+#### Overview
+This post is the **first** one of the series [Spring Framework Fundamentals](https://github.com/yavuztas/java-spring-fundamentals){:target="blank"}.
+
+In this very first post, we will explain **Object Oriented Programming** and some basic principles of it both with definitions and code samples.
+#### Object Oriented Programming
 One of the popular programming paradigms is called **Object Oriented Programming**, generally abbreviated as OOP, suggests that **objects** should be used in computer programs. Objects are special structures in programming contain **data** in forms of their properties, also named as attributes. Besides they contain procedures that are responsible for altering this data. These are mostly called as functions.
 
-Happily, Java is a clean example for the OOP languages and contains many high-level structures to for developers which are formed by objects. Thus we do not need to worry about most of the low-level operations. However, there are further principles to learn in order to apply OOP correctly. These are widely known as solid principles in the programming world. When we say solid, this is because they literally form the **SOLID**. It is a funny story about that our former computer scientists culminated with an acronym for five OOP design principles intended to make software designs better and understandable.
+Gladly, Java is a clean example for the OOP languages and contains many high-level structures for developers which are formed by objects. Thus we do not need to worry about most of the low-level operations. However, there are further principles to learn in order to apply OOP correctly. These are widely known as solid principles in the programming world. When we say solid, this is because they literally form the **SOLID**. It is a funny story about that our former computer scientists culminated with an acronym for five OOP design principles intended to make software designs better and understandable.
 
 #### What are these SOLID principles?
 We have five principles each of them stands for each letter **S-O-L-I-D** which are *[Single Responsibility Principle](#single-responsibility-principle), [Open Closed Principle](#open-closed-principle), [Liskov Substitution Principle](#liskov-substitution-principle), [Interface Segregation Principle](#interface-segregation-principle) and [Dependency Inversion Principle](#dependency-inversion-principle).*
@@ -356,5 +364,5 @@ public class OperatingSystem {
 {% endhighlight %}
 
 You can check the source code for this sample over [here](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/dip/OperatingSystem.java){:target="blank"}. Besides you can read [dependency inversion principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle){:target="blank"} over on Wikipedia for further details.
-
-After we explained OOP and the solid principles shortly we will go on *containers, inversion of control and dependency injection* and give some examples about how they are applied in our [next post]({{ site.url }}/java/oop/2019/07/04/continers-inversion-of-control-and-dependency-injection.html).
+#### Conclusion
+After we explained OOP and the solid principles shortly we will go on *containers, inversion of control and dependency injection* and give some examples about how they are applied in our [next post]({{ site.url }}/java/oop/2019/07/19/continers-inversion-of-control-and-dependency-injection.html).

@@ -44,16 +44,16 @@ social:
     share_title: ?text=
     share_link: "&amp;url="
 
-#  - icon:	facebook
-#    url:	https://facebook.com/???
-#    desc: Connect with me facebook
-#    share_url: https://www.facebook.com/sharer.php
-#    share_title: ?t=
-#    share_link: "&amp;u="
-
   - icon:	github
     url:	https://github.com/yavuztas
     desc:   Follow me on Github
+    share_url:
+    share_title:
+    share_link:
+
+  - icon: stack-overflow
+    url: https://stackoverflow.com/users/7794994/yavuz-tas
+    desc: Follow me on Stackoverflow
     share_url:
     share_title:
     share_link:
