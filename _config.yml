@@ -24,6 +24,8 @@ author_image: "/assets/images/avatar1.png"
 
 paginate:	5
 
+future: true
+
 url: "https://yavuztas.dev" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
