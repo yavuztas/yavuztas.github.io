@@ -4,8 +4,8 @@ title:  "Spring Framework Fundamentals"
 date:   2019-06-15 14:52:00
 categories: java spring
 tags: featured
-image: "/assets/article_images/2019-06-15-spring-fundamentals/header-spring.png"
-image2: "/assets/article_images/2019-06-15-spring-fundamentals/header-spring-mobile.png"
+image: "/assets/images/header-spring-3.png"
+image2: "/assets/images/header-spring-mobile.png"
 ---
 I have created an educational repository that aims to provide fundamental information and code samples with **Java**. My project primarily focuses on **Spring Framework** and attempts to prepare such a repository not only to refresh potential knowledge and practice but also to contribute, for developing the open-source community. So feel free to drop comments about your opinion and any contributions are welcome!
 
