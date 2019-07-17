@@ -6,8 +6,8 @@ categories: java oop
 tags: featured
 excerpt: In this very first post, we will explain <b>Object Oriented Programming</b> and some basic principles of it both with definitions and code samples.
 description: One of the popular programming paradigms is called <b>Object Oriented Programming</b>, generally abbreviated as OOP, suggests that <b>objects</b> should be used in computer programs. Objects are special structures in programming contain <b>data</b> in forms of their properties, also named as attributes. Besides they contain procedures that are responsible for altering this data. These are mostly called as functions.
-image: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid-principles/header-java.png"
-image2: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid-principles/header-java-mobile.png"
+image: "/assets/images/header-java-3.png"
+image2: "/assets/images/header-java-mobile.png"
 ---
 #### Overview
 This post is the **first** one of the series [Spring Framework Fundamentals](https://github.com/yavuztas/java-spring-fundamentals){:target="blank"}.
