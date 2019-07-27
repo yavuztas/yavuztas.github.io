@@ -3,7 +3,6 @@ layout: post
 title:  "Object Oriented Programming and SOLID Principles"
 date:   2019-06-22 16:33:00
 categories: java oop
-tags: featured
 excerpt: In this very first post, we will explain <b>Object Oriented Programming</b> and some basic principles of it both with definitions and code samples.
 description: One of the popular programming paradigms is called <b>Object Oriented Programming</b>, generally abbreviated as OOP, suggests that <b>objects</b> should be used in computer programs. Objects are special structures in programming contain <b>data</b> in forms of their properties, also named as attributes. Besides they contain procedures that are responsible for altering this data. These are mostly called as functions.
 image: "/assets/images/header-java-3.png"
@@ -365,4 +364,4 @@ public class OperatingSystem {
 
 You can check the source code for this sample over [here](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/dip/OperatingSystem.java){:target="blank"}. Besides you can read [dependency inversion principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle){:target="blank"} over on Wikipedia for further details.
 #### Conclusion
-After we explained OOP and the solid principles shortly we will go on *containers, inversion of control and dependency injection* and give some examples about how they are applied in our [next post]({{ site.url }}/java/oop/2019/07/19/continers-inversion-of-control-and-dependency-injection.html).
+After we explained OOP and the solid principles shortly we will go on *containers, inversion of control and dependency injection* and give some examples about how they are applied in our [next post]({{ site.url }}/java/oop/2019/07/27/continers-inversion-of-control-and-dependency-injection.html).
