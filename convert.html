@@ -1,0 +1,146 @@
+---
+layout: default
+---
+
+<style media="screen">
+
+    main {
+        max-width: 80% !important;
+    }
+
+    .content .container {
+        width: 80%;
+        height: 80%;
+        padding: 0;
+        display: flex;
+        position: absolute;
+    }
+
+    .content .container .box {
+        width: 50%;
+        height: 100%;
+    }
+
+    .content .container .box textarea {
+        width: 100%;
+        height: 100%;
+        border: 5px solid #cfd8dc;
+        outline: none;
+        font-size: 16px;
+        font-family: monospace, sans-serif;
+        padding: 10px;
+        box-sizing: border-box;
+        resize: none;
+    }
+
+    .content .container .left textarea {
+        border-right-width: 5px;
+    }
+
+    .content .container .right textarea {
+        border-left-width: 0px;
+    }
+
+
+
+</style>
+
+<script type="text/javascript">
+
+    const REGEX1 = /(### )(.*)/gm;
+    const REGEX2 = /(## )(.*)/gm;
+    const REGEX3 = /(\*\*)(.*?)\*\*/gm;
+    const REGEX4 = /(\*)(.*?)\*/gm;
+    //const REGEX5 = /\{\% highlight ([a-z]+) \%\}/gm;
+    //const REGEX6 = /\{\% endhighlight \%\}/gm;
+    const REGEX_CODE = /(\{\% highlight) ([a-z]+) \%\}(.*?)\{\% endhighlight \%\}/gs;
+    const REGEX7 = /(\[)(.*?)\]\((.*?)\)/gm;
+
+    function generateId(title){
+        return title.replace(/[\W\d]/gm, " ").trim().replace(/\s/gm,"-").toLocaleLowerCase()
+    }
+
+    function sanitizeCode(code){
+        return code.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function replacer(src, params){
+
+        let full = params[0].trim();
+        let key = (params[1])?params[1].trim():'';
+
+        if(key === '###'){
+            let text = params[2].trim();
+            return src.replace(full, `<h3>${text}</h3>`);
+        }
+        if(key === '##'){
+            let text = params[2].trim();
+            let id = generateId(text);
+            return src.replace(full, `<h2 id="${id}">${text}</h2>`);
+        }
+        if(key === '**'){
+            let text = params[2].trim();
+            return src.replace(full, `<strong>${text}</strong>`);
+        }
+        if(key === '*'){
+            let text = params[2].trim();
+            return src.replace(full, `<em>${text}</em>`);
+        }
+        if(key === '['){
+            let text = params[2].trim();
+            let href = params[3].trim();
+            return src.replace(full, `<a href="${href}">${text}</a>`);
+        }
+        if(key === '{'+'% highlight'){
+            let type = params[2].trim();
+            let code = sanitizeCode(params[3]);
+            return src.replace(full, `<pre class="brush: ${type}; gutter: true">${code}</pre>`);
+        }
+
+        return src;
+    }
+
+    function applyRegex(regex, str){
+        let result = str;
+        let params;
+        while ((params = regex.exec(str)) !== null) {
+            // This is necessary to avoid infinite loops with zero-width matches
+            if (params.index === regex.lastIndex) {
+                regex.lastIndex++;
+            }
+            result = replacer(result, params);
+        }
+        return result;
+    }
+
+    function onChange(value){
+
+        var field = document.querySelector('[name="text-wordpress"]');
+
+        value = applyRegex(REGEX1, value);
+        value = applyRegex(REGEX2, value);
+        value = applyRegex(REGEX3, value);
+        value = applyRegex(REGEX4, value);
+        // value = applyRegex(REGEX5, value);
+        // value = applyRegex(REGEX6, value);
+        value = applyRegex(REGEX_CODE, value);
+        value = applyRegex(REGEX7, value);
+
+        field.value = value;
+    }
+
+</script>
+
+<main class="content" role="main">
+
+    <h3>Convert Markdown to Wordpress</h3>
+    <div class="container">
+        <div class="box left">
+            <textarea onchange="onChange(this.value)" name="text-markdown"></textarea>
+        </div>
+        <div class="box right">
+            <textarea readonly name="text-wordpress"></textarea>
+        </div>
+    </div>
+
+</main>
