@@ -3,15 +3,17 @@ layout: post
 title:  "Object Oriented Programming and SOLID Principles"
 date:   2019-06-22 16:33:00
 categories: java oop
-excerpt: In this very first post, we will explain <b>Object Oriented Programming</b> and some basic principles of it both with definitions and code samples.
+excerpt: In this very first article, we will explain <b>Object Oriented Programming</b> and some basic principles of it both with definitions and code samples.
 description: One of the popular programming paradigms is called <b>Object Oriented Programming</b>, generally abbreviated as OOP, suggests that <b>objects</b> should be used in computer programs. Objects are special structures in programming contain <b>data</b> in forms of their properties, also named as attributes. Besides they contain procedures that are responsible for altering this data. These are mostly called as functions.
-image: "/assets/images/header-java-3.png"
-image2: "/assets/images/header-java-mobile.png"
+image: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid-principles/oop-and-solid.png"
+image2: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid-principles/oop-and-solid-mobile.png"
+image-position: right
+image2-position: center
 ---
 #### Overview
-This post is the **first** one of the series [Spring Framework Fundamentals](https://github.com/yavuztas/java-spring-fundamentals){:target="blank"}.
+This article is the **first** one of the series [Spring Framework Fundamentals](https://github.com/yavuztas/java-spring-fundamentals){:target="blank"}.
 
-In this very first post, we will explain **Object Oriented Programming** and some basic principles of it both with definitions and code samples.
+In this very first article, we will explain **Object Oriented Programming** and some basic principles of it both with definitions and code samples.
 #### Object Oriented Programming
 One of the popular programming paradigms is called **Object Oriented Programming**, generally abbreviated as OOP, suggests that **objects** should be used in computer programs. Objects are special structures in programming contain **data** in forms of their properties, also named as attributes. Besides they contain procedures that are responsible for altering this data. These are mostly called as functions.
 
@@ -71,7 +73,9 @@ public void authenticate(User user, LoginType type) {
 }
 {% endhighlight %}
 
-You can check the source code for this sample over [here](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/srp/LoginManager.java){:target="blank"}. Besides you can read [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle){:target="blank"} over on Wikipedia for further details.
+You can check the source code for this sample over [here](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/srp/LoginManager.java){:target="blank"}.
+
+Besides, you can read [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle){:target="blank"} over on Wikipedia for further details.
 
 #### Open Closed Principle
 Open Closed Principle in software programming simply means that an ideal software application should be open for extensions but closed for modifications. Doing **modification** here is thought for changing the existing codes of pre-made modules, classes, etc. On the other hand, what is mentioned when we say **extension** is adding new classes, modules or even functions without touching the rest of the codebase.
@@ -168,7 +172,7 @@ Coffee coffee = new EspressoCoffee();
 coffee.taste();
 {% endhighlight %}
 
-Besides you can read [open closed principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle) over on Wikipedia for further details.
+Besides, you can read [open closed principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle) over on Wikipedia for further details.
 #### Liskov Substitution Principle
 Liskov Substitution Principle suggests that objects in a software program should be replaceable with the instances of their subtypes without need to change properties of theirs. Another use case of interfaces transpires here since we need a behavioral similarity between subtypes, also called as **strong behavioral subtyping**. Different behaviors can output different results so we need to group subtypes with similar behavior by using interfaces not to break our program's communication with the outside.
 
@@ -244,7 +248,9 @@ for(Alive fish:pool){
 }
 {% endhighlight %}
 
-You can check the source code for this sample over [here](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/lsp/FishingPool.java){:target="blank"}. Besides you can read [liskov substitution principle](https://en.wikipedia.org/wiki/Liskov_substitution_principle){:target="blank"} over on Wikipedia for further details.
+You can check the source code for this sample over [here](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/lsp/FishingPool.java){:target="blank"}.
+
+Besides, you can read [liskov substitution principle](https://en.wikipedia.org/wiki/Liskov_substitution_principle){:target="blank"} over on Wikipedia for further details.
 
 #### Interface Segregation Principle
 Interface Segregation Principle in software simply tells us that instead of one general-purpose interface, it is better to use many client-specific ones. One obvious problem we can encounter when we violate this principle, is the boilerplate invasion of meaningless, empty methods.
@@ -305,7 +311,9 @@ public class SwimmingAnimal implements CanSwim {
 }
 {% endhighlight %}
 
-You can check the source code for this sample over [here](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/isp/AnimalFarm.java){:target="blank"}. Besides you can read [interface segregation principle](https://en.wikipedia.org/wiki/Interface_segregation_principle){:target="blank"} over on Wikipedia for further details.
+You can check the source code for this sample over [here](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/isp/AnimalFarm.java){:target="blank"}.
+
+Besides, you can read [interface segregation principle](https://en.wikipedia.org/wiki/Interface_segregation_principle){:target="blank"} over on Wikipedia for further details.
 
 #### Dependency Inversion Principle
 Dependency Inversion Principle states that in a software program high-level objects should not depend on low-level objects, on the contrary, both should depend on abstractions. Not unlike, concrete classes should depend on abstractions, not vice versa. After these abstract explanations let us be a little bit more explanatory.
@@ -362,6 +370,8 @@ public class OperatingSystem {
 }
 {% endhighlight %}
 
-You can check the source code for this sample over [here](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/dip/OperatingSystem.java){:target="blank"}. Besides you can read [dependency inversion principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle){:target="blank"} over on Wikipedia for further details.
+You can check the source code for this sample over [here](https://github.com/yavuztas/java-solid-principles/blob/master/src/main/java/dev/yavuztas/samples/solid/dip/OperatingSystem.java){:target="blank"}.
+
+Besides, you can read [dependency inversion principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle){:target="blank"} over on Wikipedia for further details.
 #### Conclusion
-After we explained OOP and the solid principles shortly we will go on *containers, inversion of control and dependency injection* and give some examples about how they are applied in our [next post]({{ site.url }}/java/oop/2019/07/27/continers-inversion-of-control-and-dependency-injection.html).
+After we explained OOP and the solid principles shortly we will go on *containers, inversion of control and dependency injection* and give some examples about how they are applied in our [next article]({{ site.url }}/java/oop/2019/07/27/continers-inversion-of-control-and-dependency-injection.html).

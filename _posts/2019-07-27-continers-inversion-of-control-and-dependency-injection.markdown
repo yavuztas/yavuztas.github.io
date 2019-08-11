@@ -4,14 +4,16 @@ title:  "Containers, Inversion of Control and Dependency Injection"
 date:   2019-07-27 14:45:00
 categories: java oop
 tags: featured
-excerpt: In this post, we will mention <b>containers</b>, <b>inversion of control</b> and <b>dependency injection</b> and give some examples about how they are applied in a simple way.
-image: "/assets/images/header-java-3.png"
-image2: "/assets/images/header-java-mobile.png"
+excerpt: In this article, we will mention <b>containers</b>, <b>inversion of control</b> and <b>dependency injection</b> and give some examples about how they are applied in a simple way.
+image: "/assets/article_images/2019-07-27-continers-inversion-of-control-and-dependency-injection/containers-ioc-di.png"
+image2: "/assets/article_images/2019-07-27-continers-inversion-of-control-and-dependency-injection/containers-ioc-di-mobile.png"
+image-position: right
+image2-position: center
 ---
 #### Overview
-This is the **second** post of the series [Spring Framework Fundamentals](https://github.com/yavuztas/java-spring-fundamentals){:target="blank"}.
+This is the **second** article of the series [Spring Framework Fundamentals](https://github.com/yavuztas/java-spring-fundamentals){:target="blank"}.
 
-In this post, we will mention *containers, inversion of control and dependency injection* and give some examples about how they are applied in a simple way.
+In this article, we will mention *containers, inversion of control and dependency injection* and give some examples about how they are applied in a simple way.
 ### What is Containers?
 Containers in computer science, are special structures that contain child objects as well as are responsible for managing their life-cycle. Although there may be different types of containers classified by how they **access**, **store** and **traverse** the objects inside, the most common behavior is, they **create**, **alter** and **remove** these child objects on purpose. On the wild, this purpose is mostly to be a framework for solving specific business problems or at least providing a way to solve them with ease.
 
@@ -74,8 +76,8 @@ public class UserService implements IUserService {
 
 }
 {% endhighlight %}
-Note that we need to depend on abstract types in order to make more *loosely coupled* connections. This is also an obvious rule of *Dependency Inversion Principle* which we explained in our [previous post]({{ site.url }}/java/oop/2019/06/22/object-oriented-programming-and-solid-principles.html). Consequently, we can say that DIP is needed to be applied in order to implement an effective *IoC Container*.
+Note that we need to depend on abstract types in order to make more *loosely coupled* connections. This is also an obvious rule of *Dependency Inversion Principle* which we explained in our [previous article]({{ site.url }}/java/oop/2019/06/22/object-oriented-programming-and-solid-principles.html). Consequently, we can say that DIP is needed to be applied in order to implement an effective *IoC Container*.
 This is why we use an interface called *IUserDao* instead of a concrete *UserDao* type.
 
 #### Conclusion
-After we mentioned about *containers, inversion of control and dependency injection*, in our [next post]({{ site.url }}/java/spring/2018/07/26/application-context-in-spring.html), we will start with the *ApplicationContext* and explain the basics of *Spring Framework*.
+After we mentioned about *containers, inversion of control and dependency injection*, in our next article, we will start with the *ApplicationContext* and explain the basics of *Spring Framework*.

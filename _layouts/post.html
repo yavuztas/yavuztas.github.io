@@ -6,10 +6,16 @@
   <body itemscope itemtype="http://schema.org/Article">
 
     <div class="teaserimage">
-        <div class="teaserimage-image" {% if page.image %}style="background-image: url({{ page.image | prepend: site.baseurl }})"{% endif %}>
+        <div class="teaserimage-image" style="
+            {% if page.image %}background-image: url({{ page.image | prepend: site.baseurl }});{% endif %}
+            {% if page.image-position %}background-position: {{ page.image-position }};{% endif %}
+        ">
             Article Image
         </div>
-        <div class="teaserimage-image mobile" {% if page.image2 %}style="background-image: url({{ page.image2 | prepend: site.baseurl }})"{% endif %}>
+        <div class="teaserimage-image mobile" style="
+            {% if page.image2 %}background-image: url({{ page.image2 | prepend: site.baseurl }});{% endif %}
+            {% if page.image2-position %}background-position: {{ page.image2-position }};{% endif %}
+        ">
             Article Image
         </div>
     </div>
