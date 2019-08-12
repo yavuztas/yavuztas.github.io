@@ -1,0 +1,26 @@
+
+### About article
+
+1. Replace all ### with <h2 id="..."></h2>
+2. Set <h2> ids
+3. If you have subtitles then use <h3>
+4. Replace * with <em></em> and ** with <strong></strong>
+5. Replace code pieces with <pre class="brush: java; gutter: true"></pre>
+6. Add code samples link at the end over on Github
+7. Try to split to separate paragraphs as much as possible
+8. Check the wordpress readability score, try to improve
+
+
+### About pull requests
+
+1. Choose your module for PR
+2. Format your code with "baeldung-formatter"
+3. Write tests if possible
+4. Run your tests
+5. Run maven build
+
+### Sample conclusion;
+<h2 id="conclusion">4. Conclusion</h2>
+In this tutorial, <strong>we learned what the Hexagonal Architecture is and how to implement a quick and practical example of it in Java</strong>.
+
+Like always, all the code samples shown in this tutorial are available <a href="https://github.com">over on GitHub</a>.
