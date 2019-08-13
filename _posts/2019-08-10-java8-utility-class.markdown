@@ -184,7 +184,9 @@ Now, by running this code, we will see the outputs of the filtered elements:
 {% endhighlight %}
 
 ### Concatenate Elements into a String
-Another ability that may be useful is knowing the elements of a collection or array structures. Besides we use it frequently for debugging purposes. We can extend our utility class by adding some methods to simply joining the string representations of the elements besides a custom separator and optional limit parameter.
+Another ability that may be useful is printing the elements of collections or arrays. Most of the time, we use it for debugging purposes.
+
+We can extend our utility class by adding some methods to simply joining the string representations of the elements. Plus, a custom separator and an optional limit parameter may be useful.
 
 So, let's define our join methods:
 {% highlight java %}
@@ -217,7 +219,7 @@ public static <T> String join(Collection<T> collection, String separator, int li
 
 {% endhighlight %}
 
-Then, let's use our *join* method with a limit parameter of **3**:
+Then, let's use our *join* method with a separator of **comma** and a limit parameter of **3**:
 {% highlight java %}
 
 String[] array = new String[] { "apple", "banana", "orange", "avocado", "mango" };
