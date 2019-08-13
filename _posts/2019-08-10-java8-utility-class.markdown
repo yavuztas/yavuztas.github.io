@@ -10,7 +10,7 @@ excerpt: One of the fluent APIs that Java 8 brings us, is the <b>Java 8 Stream A
 ---
 One of the fluent APIs that Java 8 brings us, is the [Java 8 Stream API](https://www.baeldung.com/java-8-streams), which provides a practical and minimal interface to code, especially with the help of [Java 8 Lambdas](https://www.baeldung.com/java-8-lambda-expressions-tips).
 
-In this tutorial, we are going to write a simple utility class to convert and modify java collections with ease, by using the power of **Java 8 Streams**.
+Today, we are going to write a simple utility class to convert and modify java collections with ease, by using the power of **Java 8 Streams**.
 
 ### Utility Classes
 Utility classes are structures that contain reusable and stateless helper methods. We implement these methods for handling any kind of specific operations for specific purposes. Because of their stateless nature, we mostly prefer to define them as *static*.
@@ -92,7 +92,7 @@ public static List<Double> toList(double[] array) {
 }
 
 {% endhighlight %}
-We can define more methods in the same way for other remaining primitives (*boolean*, *byte*, *char*, *short*, *float*) if we need.
+Similarly, we can define more methods in the same way for other remaining primitives like *boolean*, *byte*, *char*, *short*, *float*, etc.
 
 And also we can define their *Set* versions that are pretty same:
 {% highlight java %}
@@ -217,7 +217,7 @@ public static <T> String join(Collection<T> collection, String separator, int li
 
 {% endhighlight %}
 
-Then, let's use this *join* method with a limit of maximum **3** elements:
+Then, let's use our *join* method with a limit parameter of **3**:
 {% highlight java %}
 
 String[] array = new String[] { "apple", "banana", "orange", "avocado", "mango" };
@@ -225,12 +225,12 @@ String joined = UtilsForCollections.join(array, ", ", 3);
 System.out.println(joined);
 
 {% endhighlight %}
-Last, we will see the outputs of the joined elements:
+Last, we will see the output, maximum of **3** elements joined:
 {% highlight java %}
 apple, banana, orange, ...
 {% endhighlight %}
 ### Finally
-Today, **we explained how to implement a simple utility class for collections by the help of Java 8 Stream API**.
+In this tutorial, **we explained how to implement a simple utility class for collections by the help of Java 8 Stream API**.
 
 There are many possible methods to implement which are likely to come in handy when we are dealing with collections.
 
