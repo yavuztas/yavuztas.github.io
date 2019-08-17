@@ -61,6 +61,8 @@ layout: default
     }
 
     function sanitizeCode(code){
+        // tab to 4-spaced indents
+        code = code.replace(/\t/g, '    ');
         return code.replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
