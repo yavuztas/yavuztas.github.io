@@ -218,8 +218,197 @@ You simply do not have to define it in XML so it will be pretty much dynamic and
 ### What do you have to do, if you would like to inject something into a private field? How does this impact testing?
 You can normally inject any private field because Spring uses reflection to set these values implicitly. However when it comes to testing, you may not easily mock any private field and this is where the constructor and setter injection comes in handy on some occassions.
 
-### How does the @Qualifier annotation complement the use of @Autowired?
-When you have more than one bean instance of same type you can define an alias for each instance by the help of @Qualifier annotation.
+### How does the *@Qualifier* annotation complement the use of @Autowired?
+When you have more than one bean instance of same type you can define an alias for each instance by the help of *@Qualifier* annotation.
 
 ### What is a proxy object and what are the two different types of proxies Spring can create?
-To be continued...
+Very similar to facade objects, proxy objects are the front and gateway classes which are used to invoke arbitrary classes and their arbitrary methods from a single *invoke()* method in order to customize them before invocation.
+
+There are two types of proxy generation mechanism, **JDK Proxy** and **CGLIB**, in Spring. If the target object implements at least one interface then JDK Proxy is used otherwise, CGLIB is used by Spring.
+
+### What are the limitations of these proxies per type?
+For the JDK Proxies target object needs to implement an interface so **only the interface methods can be advised**. For the CGLIB open-source library we can advise every method of the object regardless to implement any interface however, **final methods cannot be advised, as they cannot be overridden in runtime-generated subclasses.**
+
+### What is the power of a proxy object and where are the disadvantages?
+Being able to customize object behavior without touching the object itself, decoupling these operations by the help of dynamic proxy creation are the powerful sides of proxies. As for the disadvantages, we can say that the self-invocation issue besides, maybe performance issues when we apply over on big object structures.
+
+### What does the *@Bean* annotation do?
+We use the *@Bean* annotation to define a **Spring Bean** with java configuration.
+
+### What is the default bean id if you only use @Bean? How can you override this?
+The name of the method will be the default bean id for the Spring Bean. If you want to override it, just simply set the *name* or *value* property of the *@Bean* annotation:
+{% highlight java %}
+@Bean("myFirstBean")
+public MyBean myBean() {
+    return new MyBean();
+}
+{% endhighlight %}
+
+### Why are you not allowed to annotate a final class with *@Configuration*
+Because Spring internally enhances *@Configuration* classes with CGLIB proxies, we cannot define these classes as final. Otherwise, final classes cannot be overridden in runtime.
+
+### How do *@Configuration* annotated classes support singleton beans?
+Runtime-generated proxies of *@Configuration* classes has provisions like factory objects and providing factory methods for singleton beans.
+
+### Why can’t *@Bean* methods be final either?
+*@Bean* methods inside a *@Configuration* class need to be advised by CGLIB also. So they cannot be final either.
+
+### How do you configure profiles? What are possible use cases where they might be useful?
+Possible use case for using different profiles is separating the different environments like *test*, *staging*, *production*, etc.
+We can configure profiles with two ways which are annotations and xml configuration.
+
+Configuration by *@Profile* annotation:
+{% highlight java %}
+@Profile("test")
+@Configuration
+public class TestConfiguration {
+
+}
+{% endhighlight %}
+Configuration by xml:
+{% highlight xml %}
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+    xmlns:jee="http://www.springframework.org/schema/jee"
+    xsi:schemaLocation="...">
+
+    <!-- other bean definitions -->
+
+    <beans profile="development">
+        <jdbc:embedded-database id="dataSource">
+            <jdbc:script location="classpath:com/bank/config/sql/schema.sql"/>
+            <jdbc:script location="classpath:com/bank/config/sql/test-data.sql"/>
+        </jdbc:embedded-database>
+    </beans>
+
+    <beans profile="production">
+        <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/datasource"/>
+    </beans>
+</beans>
+{% endhighlight %}
+
+### Can you use *@Bean* together with *@Profile*?
+{% highlight java %}
+@Configuration
+public class TestConfiguration {
+
+    @Bean
+    @Profile("test")
+    public TestBean testBean() {
+        return new TestBean();
+    }
+
+}
+{% endhighlight %}
+
+### Can you use *@Component* together with *@Profile*?
+{% highlight java %}
+@Profile("test")
+@Component
+public class TestComponent {
+
+}
+{% endhighlight %}
+### Activating a Profile
+The most straightforward way is to activate a profile programmatically against the **Environment API** which is available through an *ApplicationContext*:
+{% highlight java %}
+AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+ctx.getEnvironment().setActiveProfiles("development");
+ctx.register(SomeConfig.class, StandaloneDataConfig.class, JndiDataConfig.class);
+ctx.refresh();
+{% endhighlight %}
+Also there are several ways to do it. We can set the property of *spring.profiles.active* which may be specified through system environment variables, JVM system properties, servlet context parameters in *web.xml*, or even as an entry in JNDI.
+
+In addition, for the integration tests active profiles can be declared by using the *@ActiveProfiles* annotation.
+
+### How many profiles can you have?
+There is no limit for profiles.
+
+### How do you inject scalar/literal values into Spring beans?
+XML configuration:
+{% highlight xml %}
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config/>
+
+	<bean id="sampleBean" class="dev.yavuztas.spring.demo.samples.context.SampleBean">
+		<property name="message" value="Initial value" />
+	</bean>
+
+</beans>
+{% endhighlight %}
+
+With *@Value* annotation:
+{% highlight java %}
+public class SampleBean {
+
+    @Value("scalar value...")
+    private String message;
+
+}
+{% endhighlight %}
+### What is *@Value* used for?
+It is used for injecting scalar or dynamic values from environment.
+### What is Spring Expression Language (SpEL for short)?
+SpEL is an expression language for Spring Framework to query and manipulate an object graph at runtime.
+### What is the Environment abstraction in Spring?
+Environment abstraction has two ways in Spring. Profiles and Properties.
+### Where can properties in the environment come from – there are many sources for properties – check the documentation if not sure. Spring Boot adds even more.
+ * ServletConfig parameters (if applicable — for example, in case of a DispatcherServlet context)
+ * ServletContext parameters (web.xml context-param entries)
+ * JNDI environment variables (java:comp/env/ entries)
+ * JVM system properties (-D command-line arguments)
+ * JVM system environment (operating system environment variables)
+
+### What can you reference using SpEL?
+You can reference properties, methods, types, other spring beans, etc.
+### What is the difference between $ and # in *@Value* expressions?
+**#** is for expressions that access java context; methods, types, etc:
+{% highlight java %}
+@Value("#{ T(java.lang.Math).random() * 100.0 }")
+private double random;
+{% endhighlight %}
+**$** is for property messages:
+{% highlight java %}
+@Value("${samplebean.message}")
+private String message;
+{% endhighlight %}
+
+### Aspect Oriented Programming
+### What is the concept of AOP? Which problem does it solve? What is a cross cutting concern?
+AOP complements OOP in order to provide modularization of concerns. AOP is a modularization of a concern that cuts across multiple classes. Transaction management is a good example of a crosscutting concern in enterprise Java applications.
+### Name three typical cross cutting concerns.
+ * Logging    
+ * Transaction management
+ * Performance Monitoring
+
+### What two problems arise if you don't solve a cross cutting concern via AOP?
+In my opinion, highly coupled objects and modules, fragility...
+### What is a pointcut, a join point, an advice, an aspect, weaving?
+**aspect:** A modularization of a concern that cuts across multiple classes.<br/>
+**join point:** A point during execution of a program, generally methods for Spring.<br/>
+**pointcut**:   A predicate that matches join points.<br/>
+**advice**:     Action taken by an aspect at a particular join point. Different types of advice include “around”, “before” and “after”.<br/>
+**weaving**:    Linking aspects with other programs or objects.
+
+### How does Spring solve (implement) a cross cutting concern?
+Spring AOP uses internally JDK proxy for aop proxies by default. On some rare cases it can be configured to use CGLIB.
+
+### Which are the limitations of the two proxy-types?
+JDK proxies uses interfaces so the methods do not belong any interface cannot be advised. CGLIB proxies based on subclassing so it cannot be possible to override *final* classes or methods in runtime proxy generation.
+
+### What visibility must Spring bean methods have to be proxied using Spring AOP?
+Public methods.
+
+### How many advice types does Spring support. Can you name each one?
+Around, before, after.
+### What are they used for?
+// TODO ...
+### Which two advices can you use if you would like to try and catch exceptions?
+Around.
