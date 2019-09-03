@@ -269,6 +269,6 @@ Finally, the problem solved and we get our expected output as well:
 {% endhighlight %}
 
 ## 7. Conclusion
-Today, **we learned how to call default serializers inside a custom serializer in Jackson Library**.
+In this tutorial, **we learned how to call default serializers inside a custom serializer in Jackson Library**.
 
 Like always, all the code examples used in this tutorial are available [over on GitHub](https://github.com).
