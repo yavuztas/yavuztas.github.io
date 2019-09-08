@@ -6,6 +6,8 @@ categories: java algorithm
 tags: regular
 image: /assets/article_images/java-quiz-questions/java-quiz.jpg
 image2: /assets/article_images/java-quiz-questions/java-quiz-mobile.jpg
+image-position: right
+image2-position: center
 ---
 Today I would like to share one of my repositories which is about some interesting java algorithm questions and my solutions to every seven questions implemented beside.
 

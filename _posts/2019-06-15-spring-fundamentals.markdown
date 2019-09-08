@@ -16,6 +16,8 @@ Please note that this guide does not like regular how-to guides explaining every
 You can check the repository [over on Github](https://github.com/yavuztas/java-spring-fundamentals)
 
 ### Before Start
-First of all, before we dive into Spring, we should get familiar with some basic programming principles which are highly accepted in Java world and moreover strictly followed in Spring Framework. In this way, I believe this guide will be much more effective and easily understandable.
+First of all, before we dive into Spring, we should get familiar with some basic programming principles which are highly accepted in **Java** world and moreover strictly followed in **Spring Framework.**
 
-So, I will start the first article with **Object Orient Programming and SOLID Principles** over on [my next article]({{ site.url }}/java/oop/2019/06/22/object-oriented-programming-and-solid-principles.html).
+In this way, I believe this guide will be much more effective and easily understandable.
+
+So, I will start with the topic **Object Orient Programming and SOLID Principles** as [my first article]({{ site.url }}/java/oop/2019/06/22/object-oriented-programming-and-solid-principles.html).

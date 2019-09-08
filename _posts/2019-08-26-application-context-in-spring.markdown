@@ -4,9 +4,11 @@ title:  "ApplicationContext in Spring Framework"
 date:   2019-08-26 15:15:00
 categories: java spring
 tags: featured
-excerpt: In this article, we are going to explain <i>ApplicationContext</i> in <b>Spring Framework</b>.
+excerpt: When we deal with the <b>business requirements</b> in enterprise world, <b>IoC containers</b> can be a life saver in software development. They provide us a frictionless orchestration for our application components by default.
 image: "/assets/article_images/2019-08-26-application-context-in-spring/application-context-in-spring.png"
 image2: "/assets/article_images/2019-08-26-application-context-in-spring/application-context-in-spring-mobile.png"
+image-position: right
+image2-position: center
 ---
 ### Overview
 This is the **third** article of the series [Spring Framework Fundamentals](https://github.com/yavuztas/java-spring-fundamentals){:target="blank"}.
@@ -279,8 +281,8 @@ appContext.registerShutdownHook();
 Furthermore, if we are using **Spring Boot**, we do not need to do anything to close our application context because it is automatically configured to be closed in the shutdown stage.
 
 ### Conclusion
-In this article of our series, **we learned what the ApplicationContext is and how it works in Spring Framework.**
+In this article of our series, **we learned what the *ApplicationContext* is and how it works in Spring Framework.**
 
 As always, you can check the related code examples [over on Github](https://github.com/yavuztas/java-spring-fundamentals/tree/master/src/main/java/dev/yavuztas/spring/context){:target="blank"}.
 
-After we talked about *ApplicationContext*, in our next post, we will go on with the *component scanning and auto-injection* of spring beans.
+After we talked about *ApplicationContext*, in our [next article](javascript:void(0)), we will go on with the **Component Scanning and Auto-Injection** of spring beans.
