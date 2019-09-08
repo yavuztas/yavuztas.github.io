@@ -4,16 +4,16 @@ title:  "ApplicationContext in Spring Framework"
 date:   2019-08-26 15:15:00
 categories: java spring
 tags: featured
-excerpt: In this post, we are going to explain <i>ApplicationContext</i> in <b>Spring Framework</b>.
+excerpt: In this article, we are going to explain <i>ApplicationContext</i> in <b>Spring Framework</b>.
 image: "/assets/article_images/2019-08-26-application-context-in-spring/application-context-in-spring.png"
 image2: "/assets/article_images/2019-08-26-application-context-in-spring/application-context-in-spring-mobile.png"
 ---
 ### Overview
-This is the **third** post of the series [Spring Framework Fundamentals](https://github.com/yavuztas/java-spring-fundamentals){:target="blank"}.
+This is the **third** article of the series [Spring Framework Fundamentals](https://github.com/yavuztas/java-spring-fundamentals){:target="blank"}.
 
-When we deal with the **real business requirements** in application development, **IoC containers** can come in very handy. They provide us a frictionless orchestration of components, beans, classes, etc. out of the box.
+When we deal with the **business requirements** in enterprise world, **IoC containers** can be a life saver in software development. They provide us a frictionless orchestration for our application components by default.
 
-However, most of the time developers need more than that. Separating property sources and configuration files, application-wide event publishing mechanisms, loosely coupled pre/post processors and many more can be a grind of our daily work unless we choose a modern application framework to properly delegate this heavy lifting.
+However, most of the time developers need more than just **containers**. Separating property sources and configuration files, application-wide event publishing mechanisms, loosely coupled pre/post processors and many more can be a grind of our daily work unless we choose a modern application framework to properly delegate this heavy lifting.
 
 Hopefully, today's IoC containers in most of the modern frameworks **bring us the remedy for many enterprise-level requirements**.
 
