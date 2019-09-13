@@ -95,7 +95,7 @@ execution(public * * (..))
 16. About JdbcTemplate:
  * *RowMapper*: result set parsing when needed to map each row into a custom object
  * *RowCallbackHandler*: result set parsing without returning a result to the JdbcTemplate caller
- * *ResultSetExtractor*: for result set parsing and merging rows into a single object
+ * *ResultSetExtractor*: for result set parsing and merging all rows into a single object
 
 17. About transaction:
  * *<tx:jta-transaction-manager />*
@@ -189,10 +189,10 @@ The first step in producing a deployable war file is to provide a *SpringBootSer
  * The *persistence.xml* is not required.  The *LocalContainerEntityManagerFactoryBean* supports a 'packagesToScan' property where the packages to scan for *@Entity* classes can be specified.
  * To enable JPA in a Spring Boot application, add the *spring-boot-starter* and *spring-boot-starter-data-jpa* dependencies.
 
-29. About Spring MVC view resolvers:
- * *HandlerExceptionResolver*:  Maps exceptions to views also allowing for more complex exception handling code.
- * *ViewResolver*:  Resolves logical String-based view names to actual View types.
- * *ThemeResolver*:  Resolves themes your web application can use, for example, to offer personalized layouts
+29. About Spring MVC resolvers, beware they are all interfaces!
+ * *interface HandlerExceptionResolver*:  Maps exceptions to views also allowing for more complex exception handling code.
+ * *interface ViewResolver*:  Resolves logical String-based view names to actual View types.
+ * *interface ThemeResolver*:  Resolves themes your web application can use, for example, to offer personalized layouts
 
 30. Which of these is a way of closing an application context, that allows you to listen to an event, so that you can do some additional actions when the application context is closing?
 
@@ -252,7 +252,7 @@ Both of them will result in *doClose()* being called.  *doClose()* publishes the
 36. Places for Spring Boot refers to property sources:
  * *SpringApplication.setDefaultProperties()*
  * JNDI attributes
- * application.properties or .yml files inside or outside of the jav package.
+ * application.properties or .yml files inside or outside of the jar package.
  * OS environment variables
 
 application-properties.xml **cannot be taken** from outside of the jar package.
