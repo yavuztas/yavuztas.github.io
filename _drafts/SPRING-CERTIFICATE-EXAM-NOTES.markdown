@@ -273,3 +273,51 @@ The Spring Security Reference describes the 'security' attribute as:
 39. An example of proper ordering of Spring Security filters:
 
 BasicAuthenticationFilter, AnonymousAuthenticationFilter, FilterSecurityInterceptor
+
+40. Application servers manages *global transactions* JTA. Another way of using this transactions in the past was *EJB CMT (Container Managed Transactions)*
+
+41. *@Qualifier* annotation can be used on **field, type, parameter and methods.**
+
+42. *BeanNameUrlHandlerMapping* is included in the Spring Framework, and it is the default if there is no *HandlerMapping* bean registered in the application context.
+
+43. For *JdbcTemplate* methods we have:
+
+ * *query* returns *List*.
+ * *queryForMap* returns *Map*.
+ * *queryForObject* returns *Object* or *Object[]*.
+ * *queryForList* return *List*.
+
+44. About Spring Transactions, you can call *setRollbackOnly()* on the *TransactionStatus* object to roll back the current transaction.
+
+45. Spring *@Lookup* method injection:
+{% highlight java %}
+@Component
+public class MySingletonBean {
+
+    public void showMessage(){
+        MyPrototypeBean bean = getPrototypeBean();
+        //each time getPrototypeBean() call
+        //will return new instance
+    }
+
+    @Lookup
+    public MyPrototypeBean getPrototypeBean(){
+        //spring will override this method
+        return null;
+    }
+}
+{% endhighlight %}
+
+Spring uses CGLIB to proxy these lookup methods. It would be something like this:
+{% highlight java %}
+
+public MyPrototypeBean getPrototypeBean(){
+    return applicationContext.getBean(MyPrototypeBean.class);
+}
+
+{% endhighlight %}
+
+46. About Spring Security *antMatchers* and *mvcMatchers*:
+
+* *antMatchers("/secured")* matches only the exact **/secured** URL.
+* *mvcMatchers("/secured")* matches **/secured** as well as **/secured/**, **/secured.html**, **/secured.xyz**.
