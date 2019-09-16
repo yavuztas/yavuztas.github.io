@@ -284,7 +284,7 @@ BasicAuthenticationFilter, AnonymousAuthenticationFilter, FilterSecurityIntercep
 
  * *query* returns *List*.
  * *queryForMap* returns *Map*.
- * *queryForObject* returns *Object* or *Object[]*.
+ * *queryForObject* returns *Object*.
  * *queryForList* return *List*.
 
 44. About Spring Transactions, you can call *setRollbackOnly()* on the *TransactionStatus* object to roll back the current transaction.
@@ -321,3 +321,7 @@ public MyPrototypeBean getPrototypeBean(){
 
 * *antMatchers("/secured")* matches only the exact **/secured** URL.
 * *mvcMatchers("/secured")* matches **/secured** as well as **/secured/**, **/secured.html**, **/secured.xyz**.
+
+47. *@Import* annotation is used for merging *@Configuration* classes into one.
+
+48. You can define the *ApplicationContext* class type in web.xml like *AnnotationConfigWebApplicationContext*.
