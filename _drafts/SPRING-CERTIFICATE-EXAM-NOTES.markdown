@@ -65,7 +65,7 @@ execution(* *..AccountServiceImpl.update(..)) && execution(* * ..ClientServiceIm
 
 10. About Spring AOP:
 Due to the **proxy-based nature of Spring's AOP framework**, protected methods are by definition not intercepted, neither for JDK proxies nor for CGLIB proxies. As a consequence, any given pointcut will be matched against **public methods only!**
-To intercept private and protected methods, **AspecJ weaving** should be used instead of the Spring’s proxy-bases AOP framework.
+To intercept private and protected methods, **AspecJ weaving** should be used instead of the Spring’s proxy-based AOP framework.
 
 11. About this pointcut:
 {% highlight java %}
@@ -325,3 +325,68 @@ public MyPrototypeBean getPrototypeBean(){
 47. *@Import* annotation is used for merging *@Configuration* classes into one.
 
 48. You can define the *ApplicationContext* class type in web.xml like *AnnotationConfigWebApplicationContext*.
+
+49. Spring Boot internal logging without implementation is Commons Logging (self4j)
+
+50. Spring Transaction rolls back if any unchecked exception occurs. These are;
+
+* java.lang.RuntimeException
+* java.lang.Error
+
+51. Spring Security annotations that we can use SpEL expressions;
+
+ * *@PreAuthorize*
+ * *@PostAuthorize*
+ * *@PreFilter*
+ * *@PostFilter*
+
+52. *@Autowired* annotation usages;
+{% highlight java %}
+@Autowired
+public void setMyInputs(Map<String, MyInput> myInputs) {
+
+}
+
+@Autowired(required = "true")
+public void mySource(MyConnection connection) {
+
+}
+
+@Autowired
+private MyFile[] myFiles;
+
+@Autowired
+public void setMyInputs(Set<MyInput> myInputs) {
+
+}
+{% endhighlight %}
+
+53. Spring Boot externalize configurations, XML files cannot be used, other all used.
+
+54. SOAP Web Services => actions and processes, REST => information and resources
+
+55. Idempotent REST operations are those that will produce the same result no matter how many times they are repeated. So they are;
+ * PUT, GET, DELETE but **NOT POST**
+
+56. DispatcherServlet creates an application context, but it is not the root application context.
+
+Below is an example.
+{% highlight xml %}
+
+     <web-app>
+          .....
+          <listener>
+               <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+          </listener>
+
+{% endhighlight %}
+
+57. About Spring AOP;
+ * The first parameter of the *@Around* advice method must be of type *ProceedingJoinPoint*.
+ * The proceed() on the ProceedingJoinPoint, in an *@Around* advice method, may be invoked 0 or more times.
+ * There is no @AfterFinally annotation. *@After* advise is executed whether the advised method exits normally (no exception) or not (have exception).
+
+58. About *@Query* annotation;
+
+ * "Queries annotated to the query method will take precedence over queries defined using *@NamedQuery* or named queries declared in orm.xml.
+ * The *@Query* annotation allows to execute native queries by setting the **nativeQuery** flag to true. Note, that we currently don't support execution of pagination or dynamic sorting for native queries as we'd have to manipulate the actual query declared and we cannot do this reliably for native SQL.
