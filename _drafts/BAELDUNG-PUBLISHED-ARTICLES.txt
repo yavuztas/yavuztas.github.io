@@ -1,4 +1,5 @@
 
-### My Baeldung Articles
+### My Baeldung Articles (Published)
 
 1. https://www.baeldung.com/jackson-call-default-serializer-from-custom-serializer
+2. https://www.baeldung.com/hibernate-wherejointable
