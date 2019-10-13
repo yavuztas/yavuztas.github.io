@@ -1,18 +1,24 @@
 ---
 layout: post
 title:  "Consuming Variable Responses in Gson"
-date:   2014-11-30 14:34:25
+date:   2019-10-12 18:30:00
 categories: java gson
 tags: regular
-image: /assets/article_images/consuming-multi-valued-responses-with-gson/header-java.png
-image2: /assets/article_images/consuming-multi-valued-responses-with-gson/header-java-mobile.png
+image: /assets/article_images/2019-10-12-consuming-variable-responses-in-gson/variable-responses-gson.jpg
+image2: /assets/article_images/2019-10-12-consuming-variable-responses-in-gson/variable-responses-gson.jpg
+excerpt: No matter being public or private, Restful APIs are the most popular way to integrate our applications with the world outside. This means you do not have a chance to alter the services you consume, instead, you should adapt to them most of the time.
+citation: Photo by <a href="https://unsplash.com/@abrahambarrera?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Abraham Barrera</a> on <a href="https://unsplash.com/s/photos/multi-value?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 ---
-### 1. Overview
-No matter being public or private, Restful APIs are the most popular way to integrate our applications with the world outside. This means you do not have a chance to alter the services you consume, instead, you should adapt to them most of the time. Since Java is a static-typed language, it is sometimes a challenge while you are consuming and mapping the data into your response model object, especially if the response changes on some occasions.
+No matter being public or private, **Restful APIs** are the most popular way to integrate our applications with the world outside. This means you do not have a chance to alter the services you consume, instead, you should adapt to them most of the time.
 
-Today, we will learn how to handle variable responses with [**the Gson library**](https://code.google.com/p/google-gson/). For the basic usage of **Gson** you may consider reading [gson serialization guide](https://www.baeldung.com/gson-serialization-guide) and [gson deserialization guide](https://www.baeldung.com/gson-deserialization-guide) before you start.
+Since Java is a static-typed language, it can be a challenge while you are consuming and mapping the data into your model objects, especially if the response data changes depending on the use case.
 
-Before we start to use the library, we need to add the Maven dependency into our project's pom.xml:
+Today, we will show how to handle variable response structures with the [**Gson library**](https://code.google.com/p/google-gson/).
+
+For the basic usage of **Gson** you may consider reading [gson serialization guide](https://www.baeldung.com/gson-serialization-guide) and [gson deserialization guide](https://www.baeldung.com/gson-deserialization-guide) before a deep dive.
+
+### Maven Dependency
+Before we start, we need to add the Gson dependency into our project's *pom.xml:*
 {% highlight xml %}
 <dependency>
     <groupId>com.google.code.gson</groupId>
@@ -20,8 +26,8 @@ Before we start to use the library, we need to add the Maven dependency into our
     <version>2.8.5</version>
 </dependency>
 {% endhighlight %}
-### 2. Sample Response
-Let's pick a sample API for a blog which exposes detailed information about its articles with the comments which may be more than one:
+### Sample Response
+Let's pick a sample API for a blog which services detailed information about its articles along with the comments which may be more than one:
 {% highlight json %}
 {
     "id": 1,
@@ -32,7 +38,7 @@ Let's pick a sample API for a blog which exposes detailed information about its 
     ]
 }
 {% endhighlight %}
-However, if there is only one single comment then response structure changes:
+However, if there is only one single comment then its structure changes into object hash form:
 {% highlight json %}
 {
     "id": 1,
@@ -40,9 +46,8 @@ However, if there is only one single comment then response structure changes:
     "comments": {"id":1, "text":"some comment text"}
 }
 {% endhighlight %}
-### 3. Writing a Response Model
-In order to map the data, we need a plain java object as a response model.
-Let's start by defining a simple class that matches the main response structure:
+### Writing a Response Model
+In order to map the data, we need a POJO as a response model. Let's start by defining a simple class that matches the main response structure:
 {% highlight java %}
 public class ArticleModel {
 
@@ -73,26 +78,32 @@ public class CommentModel {
 
 }
 {% endhighlight %}
-### 4. Consuming the response
-Since we use *List&lt;CommentModel&gt;* for the *comments* field, we can easily map multiple values for comments which Gson already does the heavy lifting for us:
+### Consuming the response
+Since we use *List&lt;CommentModel&gt;* for the *comments* field, we can easily map multiple values which Gson already does the heavy lifting for us:
 {% highlight java %}
-String jsonString = "{"id": 1,"name": "sample article","comments": [{"id":1, "text":"some comment text"},{"id":2, "text":"some another comment text"}]}";
+String responseText = "{
+  "id": 1,
+  "name": "sample article",
+  "comments": [
+    {"id":1, "text":"some comment"},
+    {"id":2, "text":"some another comment"}
+  ]}";
 Gson gson = new Gson();
-ArticleModel model = gson.fromJson(jsonString, ArticleModel.class);
+ArticleModel model = gson.fromJson(responseText, ArticleModel.class);
 
 Assert.assertEquals(1, model.getId().longValue());
 Assert.assertEquals("sample article", model.getName());
 Assert.assertEquals(2, model.getComments().size());
 Assert.assertEquals(1, model.getComments().get(0).getId().longValue());
-Assert.assertEquals("some comment text", model.getComments().get(0).getText());
+Assert.assertEquals("some comment", model.getComments().get(0).getText());
 Assert.assertEquals(2, model.getComments().get(1).getId().longValue());
-Assert.assertEquals("some another comment text", model.getComments().get(1).getText());
+Assert.assertEquals("some another comment", model.getComments().get(1).getText());
 {% endhighlight %}
 Although this configuration works for the multiple values of comments, if it changes to a single value then we need to define a custom *TypeAdapter* in order to handle both single and multiple values.
-### 5. Custom *TypeAdapter* for Gson
-Since our purpose is to implement a custom JSON deserialization behavior, we need to create a *TypeAdapter* to achieve this. This behavior will be responsible for adding any single value to the list as the same as multiple values are being added automatically by Gson.
+### Custom *TypeAdapter* in Gson
+In order to achieve a custom JSON deserialization behavior, we need to create a *TypeAdapter*. This behavior will be responsible for adding any single value to the list as the same as multiple values are being added automatically by Gson.
 
-So Let's create a Gson *TypeAdapter* for this purpose:
+For the beginning, let's create a Gson *TypeAdapter* for this purpose:
 {% highlight java %}
 public class CommentListTypeAdapter extends TypeAdapter<List> {
 
@@ -108,9 +119,9 @@ public class CommentListTypeAdapter extends TypeAdapter<List> {
 	}
 }
 {% endhighlight %}
-We need to access *Gson* instance to preserve default deserialization behavior for *Object* and *Collection* types.
+We need to access *Gson* instance inside our *TypeAdapter* to preserve and reuse default deserialization behavior for *Object* and *Collection* types.
 
-First, let's define a constructor and fields for default adapters:
+So, let's define a constructor and fields of *Gson* instance and some default adapters:
 {% highlight java %}
 
 private Gson gson;
@@ -124,9 +135,9 @@ public CommentListTypeAdapter(Gson gson) {
 }
 
 {% endhighlight %}
-Since we are aiming to do deserialization only, we can omit the *write* method of our adapter. However, we may implement in any case by simply delegating it to the default adapters.
+Since we aim to deserialize only, we can omit the *write* method of our adapter. However, we can implement in any case by simply delegating it to the default adapters.
 
-Second, let's implement *write* method by using *listTypeAdapter*:
+Next, let's implement *write* method by using *listTypeAdapter*:
 {% highlight java %}
 @Override
 public void write(JsonWriter out, List list) throws IOException {
@@ -135,7 +146,7 @@ public void write(JsonWriter out, List list) throws IOException {
 
 }
 {% endhighlight %}
-Last, we implement the *read* method of our adapter in order to come up with our expected deserialization behavior:
+Then, we implement the *read* method of our adapter to come up with our expected deserialization behavior:
 {% highlight java %}
 @Override
 public List read(JsonReader in) throws IOException {
@@ -159,10 +170,10 @@ public List read(JsonReader in) throws IOException {
 	return deserializedObject;
 }
 {% endhighlight %}
-### 6. *TypeAdapterFactory* in Gson
-We may consider using *TypeAdapterFactory* in Gson. There are two benefits of this, one of them is we can implement a generic factory method to create different *TypeAdapter* classes for different types. The other is we can access the underlying *Gson* instance and reuse it which we are looking for primarily right now.  
+### *TypeAdapterFactory* in Gson
+We may consider using *TypeAdapterFactory* in Gson. There are two benefits of this; one of them is we can implement a generic factory method to create different *TypeAdapter* classes for different types. The other one is **we can access the underlying *Gson* instance and reuse it** which we are primarily looking for now.  
 
-So let's create a custom *TypeAdapterFactory*:
+So, let's create a custom *TypeAdapterFactory*:
 {% highlight java %}
 public class CommentListTypeAdapterFactory implements TypeAdapterFactory {
 
@@ -174,9 +185,9 @@ public class CommentListTypeAdapterFactory implements TypeAdapterFactory {
 
 }
 {% endhighlight %}
-We have just created an instance of our *CommentListTypeAdapter* and delegated the existing *Gson* instance to our type adapter.
-### 7. Registering *TypeAdapterFactory*
-Finally, we need to register our custom *TypeAdapterFactory* to the *Gson* context to make it work.
+As we can see, we delegated the existing *Gson* instance to our *CommentListTypeAdapter* by the help of our custom *TypeAdapterFactory*.
+### Registering *TypeAdapterFactory* into Gson
+Finally, we need to register our custom *TypeAdapterFactory* into the *Gson* context to make it work.
 
 Let's update our *ArticleModel*:
 {% highlight java %}
@@ -189,22 +200,26 @@ private List<CommentModel> comments;
 Now we can consume single value structures like multiple values with the same *ArticleModel*:
 {% highlight java %}
 
-String jsonString = "{"id": 1,"name": "sample article","comments": {"id":1, "text":"some comment text"}}";
+String responseText = "{
+  "id": 1,
+  "name": "sample article",
+  "comments": {"id":1, "text":"some comment"}
+  }";
 Gson gson = new Gson();
-ArticleModel model = gson.fromJson(jsonString, ArticleModel.class);
+ArticleModel model = gson.fromJson(responseText, ArticleModel.class);
 
 Assert.assertEquals(1, model.getId().longValue());
 Assert.assertEquals("sample article", model.getName());
 
 Assert.assertEquals(1, model.getComments().size());
 Assert.assertEquals(1, model.getComments().get(0).getId().longValue());
-Assert.assertEquals("some comment text", model.getComments().get(0).getText());
+Assert.assertEquals("some comment", model.getComments().get(0).getText());
 
 {% endhighlight %}
-### 8. Further Improvements With the Power of Generics
+### Further Improvements With the Power of Generics
 We can go further by refactoring our code with the help of **generics** and **reflection** in the benefit of reusability. To prevent creating a new adapter for each type it might be essential to follow this method on some occasions.
 
-So we will implement another *TypeAdapter* because we need to handle the deserialization in a generic way:
+Similarly, we implement another *TypeAdapter* because we need to handle it in a generic way:
 {% highlight java %}
 public class SingleAwareListTypeAdapter extends TypeAdapter<List> {
 
@@ -266,7 +281,7 @@ public class SingleAwareListTypeAdapter extends TypeAdapter<List> {
 	}
 }
 {% endhighlight %}
-Thus we can use the same adapter for different element types when we need this same behavior.
+Thus, we can use the same adapter for different element types when we need the same behavior.
 
 We should also create another *TypeAdapterFactory* implementation which will use our new generic *SingleAwareListTypeAdapter*:
 {% highlight java %}
@@ -284,19 +299,18 @@ public class SingleAwareListTypeAdapterFactory implements TypeAdapterFactory {
 		Type elementType = parameterizedType.getActualTypeArguments()[0];
 		Class rawElementType = Class.class.cast(elementType);
 
-		// and proceed only if the element type is CommentModel
-		if (!rawElementType.equals(CommentModel.class)) {
-			return null;
-		}
-
 		return (TypeAdapter<T>) new SingleAwareListTypeAdapter(gson, rawElementType);
 	}
 
 }
 {% endhighlight %}
-We have implemented our factory with the help of reflection. Since we need the runtime class of incoming elements, first we got the *ParameterizedType* then obtained the runtime *Class* type of the element inside the *Collection*. In this way, we passed the runtime type of the element into *SingleAwareListTypeAdapter* as a parameter in the constructor. It is important to let the Gson know the element's type information in runtime otherwise our comment models are deserialized as *LinkedTreeSet* by default and we do not expect that.
+It is important to **let the Gson know the list element's type information in runtime otherwise our models are deserialized as *LinkedTreeSet* by default.**
 
-Last, let's change our *ArticleModel* to use our new generic adapter factory:
+Since we need the runtime class of incoming list elements, first we obtained the *ParameterizedType*, then the runtime *Class* type of the element inside the *Collection*.
+
+In this way, we passed the type information of the element into the *SingleAwareListTypeAdapter* as a parameter in the constructor.
+
+Finally, let's change our *ArticleModel* to use our new generic adapter factory:
 {% highlight java %}
 
 @JsonAdapter(SingleAwareListTypeAdapterFactory.class)
@@ -304,9 +318,11 @@ Last, let's change our *ArticleModel* to use our new generic adapter factory:
 private List<CommentModel> comments;
 
 {% endhighlight %}
-As a result, with the help of **generics** and **reflection**, we can use the same adapter, *SingleAwareListTypeAdapterFactory*, for the other properties with different element types as well. Consequently this will lead us to our goal and provide an effective way of **reusability**.
+As a result, with the help of **generics** and **reflection**, we can use the same adapter, *SingleAwareListTypeAdapterFactory*, for the other properties with different element types as well.
 
-### 9. Conclusion
+Consequently, this will provide an effective way of **reusability** and lead us to our goal.
+
+### Conclusion
 In this tutorial, **we learned how to implement custom adapters to handle variable responses in Gson**.
 
-The source code of examples shown in this tutorial are available [over on GitHub](https://github.com).
+All the source code of examples shown in this tutorial are available [over on GitHub](https://github.com).
