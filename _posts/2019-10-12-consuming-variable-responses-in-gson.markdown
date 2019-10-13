@@ -325,4 +325,4 @@ Consequently, this will provide an effective way of **reusability** and lead us 
 ### Conclusion
 In this tutorial, **we learned how to implement custom adapters to handle variable responses in Gson**.
 
-All the source code of examples shown in this tutorial are available [over on GitHub](https://github.com).
+All the source code of examples shown in this tutorial are available [over on GitHub](https://github.com/yavuztas/java-gson-multivalue).
