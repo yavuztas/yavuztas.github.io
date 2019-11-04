@@ -2,6 +2,7 @@
 layout: post
 title:  "Containers, Inversion of Control and Dependency Injection"
 date:   2019-07-27 14:45:00
+readtime: 3 min read
 categories: java oop
 tags: regular
 excerpt: In this article, we will mention <b>containers</b>, <b>inversion of control</b> and <b>dependency injection</b> and give some examples about how they are applied in a simple way.

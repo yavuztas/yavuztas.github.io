@@ -10,11 +10,11 @@
 
 $rs: 20px
 
-$font-serif: Linux Libertine
-$font-sans: Ubuntu, Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif
+$font-serif: "Ubuntu", -apple-system, "Open Sans", "MundoSans", "Helvetica Neue", Arial, Helvetica, sans-serif
+$font-sans: "Ubuntu", -apple-system, "Open Sans", "MundoSans", "Helvetica Neue", Arial, Helvetica, sans-serif
 
-$post-font-size: 22px
-$post-font-weight: 400
+$post-font-size: 1.125rem
+$post-font-weight: 300
 
 @mixin respond-to($breakpoint)
   @media only screen and (max-width: $breakpoint + px)
@@ -178,13 +178,38 @@ body
         &:hover
           text-decoration: none
     .post-excerpt
-      letter-spacing: -0.02em
       font-weight: 300
       font-style: normal
-      font-size: 20px
+      font-size: 19px
       line-height: 1.3
-      color: #666665
+      color: #424242
+      margin-top: -5px
+      a
+        font-weight: 400
+        font-size: 14px
+        text-decoration: underline
+        color: #424242
+        text-transform: uppercase
+    .post-item-image
+      width: 100px
+      height: 80px
+      overflow: hidden
+      margin: 10px 10px 0 0
+      position: relative
+      float: left
+      box-shadow: 0px 0px 4px #b3b3b0
+      img
+        position: absolute
+        left: -1000%
+        right: -1000%
+        top: -1000%
+        bottom: -1000%
+        margin: auto
+        min-height: 100%
+        min-width: 100%
+        max-height: 100px
     .post-meta
+      clear: both
       font-size: 14px
       color: #b3b3b1
       line-height: 30px
@@ -193,6 +218,21 @@ body
         text-decoration: none
         &:hover
           text-decoration: underline
+      .tags
+        display: inline-block
+        @media(max-width: 700px)
+          float: none
+          margin-top: 10px
+        .label
+          font-weight: 400
+          font-size: 14px
+          text-decoration: underline
+          color: #b3b3b1
+          color: #848484
+        .label:not(:last-child)::after
+          content: ','
+      .readtime
+        float: right
 .container.featured
   padding-bottom: 20px
 
@@ -341,6 +381,9 @@ body
       text-overflow: ellipsis
       .labelbox
         float: right
+        @media(max-width: 700px)
+            float: none
+            margin-top: 10px
         .label
             background: #eeeeff
             padding: 2px 10px
@@ -440,16 +483,21 @@ body
       padding-top: 31px
       margin-bottom: 4px
     p
+      font-family: $font-sans
       font-size: $post-font-size
       font-weight: $post-font-weight
       font-style: normal
-      line-height: 30px
+      font-smoothing: subpixel-antialiased
+      line-height: 1.5rem
+      letter-spacing: 0.01em
       margin: 0
       padding-bottom: 25px
-      color: #333
+      color: #212121
       -webkit-hyphens: auto
       -moz-hyphens: auto
       hyphens: auto
+      -moz-osx-font-smoothing: grayscale
+      -webkit-font-smoothing: antialiased
     a
       color: #333
       text-decoration: underline
@@ -512,8 +560,8 @@ body
       padding: 0
       font-weight: 400
       font-style: normal
-      font-size: 23px
-      line-height: 30px
+      font-size: 19px
+      line-height: 25px
       margin-left: 30px
       margin-bottom: 12px
       padding-top: 2px

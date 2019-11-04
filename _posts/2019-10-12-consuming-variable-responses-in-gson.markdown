@@ -2,11 +2,12 @@
 layout: post
 title:  "Consuming Variable Responses in Gson"
 date:   2019-10-12 18:30:00
+readtime: 5 min read
 categories: java gson
-tags: regular
+tags: featured
 image: /assets/article_images/2019-10-12-consuming-variable-responses-in-gson/variable-responses-gson.jpg
 image2: /assets/article_images/2019-10-12-consuming-variable-responses-in-gson/variable-responses-gson.jpg
-excerpt: No matter being public or private, Restful APIs are the most popular way to integrate our applications with the world outside. This means you do not have a chance to alter the services you consume, instead, you should adapt to them most of the time.
+excerpt: No matter being public or private, <b>Restful APIs</b> are the most popular way to integrate our applications with the world outside. This means you do not have a chance to alter the services you consume, instead, you should adapt to them most of the time.
 citation: Photo by <a href="https://unsplash.com/@abrahambarrera?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Abraham Barrera</a> on <a href="https://unsplash.com/s/photos/multi-value?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 ---
 No matter being public or private, **Restful APIs** are the most popular way to integrate our applications with the world outside. This means you do not have a chance to alter the services you consume, instead, you should adapt to them most of the time.
@@ -78,7 +79,7 @@ public class CommentModel {
 
 }
 {% endhighlight %}
-### Consuming the response
+### Consuming the Response
 Since we use *List&lt;CommentModel&gt;* for the *comments* field, we can easily map multiple values which Gson already does the heavy lifting for us:
 {% highlight java %}
 String responseText = "{

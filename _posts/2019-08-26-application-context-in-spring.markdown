@@ -2,6 +2,7 @@
 layout: post
 title:  "ApplicationContext in Spring Framework"
 date:   2019-08-26 15:15:00
+readtime: 5 min read
 categories: java spring
 tags: featured
 excerpt: When we deal with the <b>business requirements</b> in enterprise world, <b>IoC containers</b> can be a life saver in software development. They provide us a frictionless orchestration for our application components by default.

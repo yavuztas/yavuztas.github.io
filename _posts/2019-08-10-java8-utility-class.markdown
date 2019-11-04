@@ -2,6 +2,7 @@
 layout: post
 title:  "Writing a Utility Class for Collections in Java 8"
 date:   2019-08-10 18:00:00
+readtime: 5 min read
 categories: java collections streams
 tags: regular
 excerpt: One of the fluent APIs that Java 8 brings us, is the <b>Java 8 Stream API</b>, which provides a practical and minimal interface to code, especially with the help of <b>Java 8 Lambdas</b>.

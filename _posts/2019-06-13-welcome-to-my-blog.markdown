@@ -2,6 +2,7 @@
 layout: post
 title:  "Welcome to My Blog!"
 date:   2019-06-13 13:00:00
+readtime: 1 min read
 categories: general
 tags: featured
 image: "/assets/article_images/2019-06-13-welcome-to-my-blog/my-first-blog.jpg"

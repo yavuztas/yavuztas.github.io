@@ -2,8 +2,9 @@
 layout: post
 title:  "Spring Framework Fundamentals"
 date:   2019-06-15 14:52:00
+readtime: 1 min read
 categories: java spring
-tags: featured
+tags: regular
 image: "/assets/article_images/2019-06-15-spring-fundamentals/spring-fundamentals.png"
 image2: "/assets/article_images/2019-06-15-spring-fundamentals/spring-fundamentals-mobile.png"
 image-position: right
