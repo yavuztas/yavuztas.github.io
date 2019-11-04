@@ -5,6 +5,7 @@ date:   2019-06-13 13:00:00
 readtime: 1 min read
 categories: general
 tags: featured
+excerpt: This is a <b>momentous occasion</b> for me, so many years I had to wait to launch my blog. Under the burden of my daily work, I thought I couldn't share my experience because I am a quite busy software developer.
 image: "/assets/article_images/2019-06-13-welcome-to-my-blog/my-first-blog.jpg"
 image2: "/assets/article_images/2019-06-13-welcome-to-my-blog/my-first-blog-mobile.jpg"
 ---

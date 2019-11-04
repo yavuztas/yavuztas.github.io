@@ -5,7 +5,7 @@ date:   2019-08-26 15:15:00
 readtime: 5 min read
 categories: java spring
 tags: featured
-excerpt: When we deal with the <b>business requirements</b> in enterprise world, <b>IoC containers</b> can be a life saver in software development. They provide us a frictionless orchestration for our application components by default.
+excerpt: When we deal with the <b>business requirements</b> in enterprise world, <b>IoC containers</b> can be a life saver in software development. They provide us a frictionless orchestration for our application components...
 image: "/assets/article_images/2019-08-26-application-context-in-spring/application-context-in-spring.png"
 image2: "/assets/article_images/2019-08-26-application-context-in-spring/application-context-in-spring-mobile.png"
 image-position: right

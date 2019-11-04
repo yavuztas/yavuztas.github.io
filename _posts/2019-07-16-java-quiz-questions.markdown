@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Some Java Algorithm Questions"
+title:  "Java Algorithm Questions"
 date:   2019-07-16 18:04:00
 readtime: Less than a minute read
 categories: java algorithm
@@ -9,9 +9,9 @@ image: /assets/article_images/java-quiz-questions/java-quiz.jpg
 image2: /assets/article_images/java-quiz-questions/java-quiz-mobile.jpg
 image-position: right
 image2-position: center
-excerpt: Today I would like to share one of my repositories which is about some interesting java algorithm questions and my solutions to every seven questions implemented beside.
+excerpt: Today, I would like to share one of my repositories which is about some interesting <b>java algorithm questions</b> and my solutions to them. These questions...
 ---
-Today I would like to share one of my repositories which is about some interesting java algorithm questions and my solutions to every seven questions implemented beside.
+Today, I would like to share one of my repositories which is about some interesting <b>java algorithm questions</b> and my solutions to them.
 
 These questions are;
 1. Path

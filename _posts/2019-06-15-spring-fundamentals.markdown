@@ -5,6 +5,7 @@ date:   2019-06-15 14:52:00
 readtime: 1 min read
 categories: java spring
 tags: regular
+excerpt: I have created an educational repository that aims to provide fundamental information and code samples with <b>Java</b>. My project primarily focuses on <b>Spring Framework</b> and attempts to...
 image: "/assets/article_images/2019-06-15-spring-fundamentals/spring-fundamentals.png"
 image2: "/assets/article_images/2019-06-15-spring-fundamentals/spring-fundamentals-mobile.png"
 image-position: right

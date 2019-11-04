@@ -5,7 +5,7 @@ date:   2019-07-27 14:45:00
 readtime: 3 min read
 categories: java oop
 tags: regular
-excerpt: In this article, we will mention <b>containers</b>, <b>inversion of control</b> and <b>dependency injection</b> and give some examples about how they are applied in a simple way.
+excerpt: <b>Containers</b> in computer science, are special structures that contain child objects as well as are responsible for managing their <b>life-cycle</b>. Although there may be different types of containers classified by how they...
 image: "/assets/article_images/2019-07-27-continers-inversion-of-control-and-dependency-injection/containers-ioc-di.png"
 image2: "/assets/article_images/2019-07-27-continers-inversion-of-control-and-dependency-injection/containers-ioc-di-mobile.png"
 image-position: right

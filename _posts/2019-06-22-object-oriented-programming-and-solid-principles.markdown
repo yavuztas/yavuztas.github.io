@@ -4,8 +4,7 @@ title:  "Object Oriented Programming and SOLID Principles"
 date:   2019-06-22 16:33:00
 readtime: 8 min read
 categories: java oop
-excerpt: In this very first article, we will explain <b>Object Oriented Programming</b> and some basic principles of it both with definitions and code samples.
-description: One of the popular programming paradigms is called <b>Object Oriented Programming</b>, generally abbreviated as OOP, suggests that <b>objects</b> should be used in computer programs. Objects are special structures in programming contain <b>data</b> in forms of their properties, also named as attributes. Besides they contain procedures that are responsible for altering this data. These are mostly called as functions.
+excerpt: In this very first article, we will explain <b>Object Oriented Programming</b> and some basic principles of it both with definitions and code samples. One of the popular programming paradigms is...
 image: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid-principles/oop-and-solid.png"
 image2: "/assets/article_images/2019-06-22-object-oriented-programming-and-solid-principles/oop-and-solid-mobile.png"
 image-position: right

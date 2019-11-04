@@ -7,7 +7,7 @@ categories: java gson
 tags: featured
 image: /assets/article_images/2019-10-12-consuming-variable-responses-in-gson/variable-responses-gson.jpg
 image2: /assets/article_images/2019-10-12-consuming-variable-responses-in-gson/variable-responses-gson.jpg
-excerpt: No matter being public or private, <b>Restful APIs</b> are the most popular way to integrate our applications with the world outside. This means you do not have a chance to alter the services you consume, instead, you should adapt to them most of the time.
+excerpt: No matter being public or private, <b>Restful APIs</b> are the most popular way to integrate our applications with the world outside. This means you do not have a chance to alter the services you consume, instead, you should...
 citation: Photo by <a href="https://unsplash.com/@abrahambarrera?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Abraham Barrera</a> on <a href="https://unsplash.com/s/photos/multi-value?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 ---
 No matter being public or private, **Restful APIs** are the most popular way to integrate our applications with the world outside. This means you do not have a chance to alter the services you consume, instead, you should adapt to them most of the time.
