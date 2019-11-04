@@ -23,4 +23,4 @@ Like always, all the code samples shown in this tutorial are available <a href="
 
 ### Samples (not used yet)
 
-Despite changing business requirements nowadays, desire for a stable and maintainable software have definitely led us more capable frameworks with an expected trade-off over complexity and steep learning curve. We can count many implementations of JPA specification in Java like Hibernate, jOOQ, etc. as an example.
+Despite variable business requirements of today's technology, desire for a stable and maintainable software bring us more capable frameworks with an expected trade-off over complexity and steep learning curve. We can count many implementations of JPA specification in Java like Hibernate, jOOQ, etc. as an example.
