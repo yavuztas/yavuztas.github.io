@@ -13,8 +13,12 @@
             Article Image
         </div>
         <div class="teaserimage-image mobile" style="
-            {% if page.image2 %}background-image: url({{ page.image2 | prepend: site.baseurl }});{% endif %}
-            {% if page.image2-position %}background-position: {{ page.image2-position }};{% endif %}
+            {% if page.image2 %}background-image: url({{ page.image2 | prepend: site.baseurl }});
+            {% else page.image %}background-image: url({{ page.image | prepend: site.baseurl }});
+            {% endif %}
+            {% if page.image2-position %}background-position: {{ page.image2-position }};
+            {% else page.image-position %}background-position: {{ page.image-position }};
+            {% endif %}
         ">
             Article Image
         </div>
