@@ -5,6 +5,7 @@ date:   2019-11-10 22:30:00
 categories: javascript vuejs
 tags: regular
 image: /assets/article_images/2019-11-10-type-based-global-events-in-vuejs/type-based-global-events-in-vuejs.jpg
+image2: /assets/article_images/2019-11-10-type-based-global-events-in-vuejs/type-based-global-events-in-vuejs-mobile.jpg
 excerpt: In one of the latest freelance projects of mine, my client prefers <b>Vue Framework</b> which is recently super popular on the frontend side.
 citation: Photo by <a href="https://unsplash.com/@mathyaskurmann?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mathyas Kurmann</a> on <a href="https://unsplash.com/s/photos/post?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 ---
