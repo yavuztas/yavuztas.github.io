@@ -10,6 +10,9 @@
 ## POST - An effect of Phrasal Verbs to human life
 Write a joke about "cut him down" with titled "An effect of Phrasal Verbs to human life". Post it to social media
 
+## POST - ECMAScript 6 private fields
+Post about ES6 new syntax *#field*, but also mention about it's breaking some properties like Proxy. Debatable issue...
+
 ## ARTICLE - Java utility article
 Share this article with other channels also
 
