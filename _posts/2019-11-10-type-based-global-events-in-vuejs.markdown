@@ -220,4 +220,6 @@ In this short tutorial, **I explained how to implement type-based global events 
 
 You can find the plugin [over on GitHub](https://gist.github.com/yavuztas/d1300752057de9314c8614d6a82ccc39).
 
-So, what do you think about this approach or anything to extend? I would like to see your comments below!
+So, what do you think about this approach?
+
+I would like to see your comments below!
