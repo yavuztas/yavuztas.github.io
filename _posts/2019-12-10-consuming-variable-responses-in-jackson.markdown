@@ -2,12 +2,15 @@
 layout: post
 title:  "Consuming Variable Responses in Jackson"
 date:   2019-12-10 22:00:00
+readtime: 6 min read
 categories: java jackson
-tags: regular
-image: /assets/article_images/consuming-variable-responses-in-jackson/header-java.png
-image2: /assets/article_images/consuming-variable-responses-in-jackson/header-java-mobile.png
+tags: featured
+image: /assets/article_images/2019-12-10-consuming-variable-responses-in-jackson/variable-responses-jackson.jpg
+image2: /assets/article_images/2019-12-10-consuming-variable-responses-in-jackson/variable-responses-jackson-mobile.jpg
+excerpt: In addition to being another popular library of JSON in Java, the <b>Jackson Library</b> is very well known for its ability to offer deep customization in an opinionated way.
+citation: Photo by <a href="https://unsplash.com/@franckinjapan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Franck V.</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 ---
-In addition to being another popular library of JSON in Java, **the [Jackson Library](https://github.com/FasterXML/jackson) is very well known for its ability to offer deep customization in an opinionated way.**
+In addition to being another popular library of <i>JSON</i> in Java, **the [Jackson Library](https://github.com/FasterXML/jackson) is very well known for its ability to offer deep customization in an opinionated way.**
 
 In this article, we are going to show an alternate way by using the *Jackson Library* for the same solution which was about [how to handle variable responses in Gson](https://yavuztas.dev/java/gson/2019/10/12/consuming-variable-responses-in-gson.html).
 
@@ -261,4 +264,4 @@ As a result, we can provide the same behavior by the *SingleAwareListDeserialize
 ## Finally
 In this tutorial, **we learned how to handle variable responses in Jackson by using the builtin features and custom deserializers as well**.
 
-All the source code for the examples shown in this tutorial are available [over on GitHub](https://github.com).
+All the source code for the examples shown in this tutorial are available [over on GitHub](https://github.com/yavuztas/java-jackson-multivalue).

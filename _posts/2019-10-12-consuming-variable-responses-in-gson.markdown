@@ -10,13 +10,11 @@ image2: /assets/article_images/2019-10-12-consuming-variable-responses-in-gson/v
 excerpt: No matter being public or private, <b>Restful APIs</b> are the most popular way to integrate our applications with the world outside. This means you do not have a chance to alter the services you consume, instead, you should...
 citation: Photo by <a href="https://unsplash.com/@abrahambarrera?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Abraham Barrera</a> on <a href="https://unsplash.com/s/photos/multi-value?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 ---
-No matter being public or private, **Restful APIs** are the most popular way to integrate our applications with the world outside. This means you do not have a chance to alter the services you consume, instead, you should adapt to them most of the time.
+No matter being public or private, *Restful APIs* are the most popular way to integrate our applications with the world outside. This means you do not have a chance to alter the services you consume, instead, you should adapt to them most of the time.
 
 Since Java is a static-typed language, it can be a challenge while you are consuming and mapping the data into your model objects, especially if the response data changes depending on the use case.
 
-Today, we will show how to handle variable response structures with the [**Gson library**](https://code.google.com/p/google-gson/).
-
-For the basic usage of **Gson** you may consider reading [gson serialization guide](https://www.baeldung.com/gson-serialization-guide) and [gson deserialization guide](https://www.baeldung.com/gson-deserialization-guide) before a deep dive.
+In this article, we will show how to handle variable response structures with the [Gson Library](https://code.google.com/p/google-gson/).
 
 ### Maven Dependency
 Before we start, we need to add the Gson dependency into our project's *pom.xml:*
