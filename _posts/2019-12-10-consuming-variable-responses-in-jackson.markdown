@@ -135,7 +135,7 @@ public class CommentListDeserializer extends StdDeserializer<List> {
 
 }
 {% endhighlight %}
-We need a *TypeParameter* for Jackson to specify the *Collection* type and the type of elements in which are involved as well.
+We need a *TypeReference* for Jackson to specify the *Collection* type and the type of elements in which are involved as well.
 
 So, let's define a constant for a type of *List&lt;CommentModel&gt;*:
 {% highlight java %}
