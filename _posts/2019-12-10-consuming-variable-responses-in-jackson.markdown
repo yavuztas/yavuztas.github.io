@@ -12,9 +12,9 @@ citation: Photo by <a href="https://unsplash.com/@franckinjapan?utm_source=unspl
 ---
 In addition to being another popular library of <i>JSON</i> in Java, **the [Jackson Library](https://github.com/FasterXML/jackson) is very well known for its ability to offer deep customization in an opinionated way.**
 
-In this article, we are going to show an alternate way by using the *Jackson Library* for the same solution which was about [how to handle variable responses in Gson](https://yavuztas.dev/java/gson/2019/10/12/consuming-variable-responses-in-gson.html).
+In this article, we are going to show an alternate way with the *Jackson Library* for the same solution which was about [how to handle variable responses in Gson](https://yavuztas.dev/java/gson/2019/10/12/consuming-variable-responses-in-gson.html).
 
-## Adding Dependencies
+### Adding Dependencies
 Before we start, we need to add the Maven dependencies into our project's *pom.xml:*
 {% highlight xml %}
 
@@ -32,7 +32,7 @@ Before we start, we need to add the Maven dependencies into our project's *pom.x
 
 {% endhighlight %}
 We should note that if we already use **Spring Boot** and **Spring Web Starter** module enabled in our project then simply, we don't need to add any extra dependency for Jackson.
-## Sample Response
+### Sample Response
 Let's use the sample API response:
 {% highlight json %}
 {
@@ -52,7 +52,7 @@ Also, the response changes from *Array* to *Object* notation when there is only 
     "comments": {"id":1, "text":"some comment text"}
 }
 {% endhighlight %}
-## Response Models
+### Response Models
 We'll also use the same models from the [previous article](https://yavuztas.dev/java/gson/2019/10/12/consuming-variable-responses-in-gson.html):
 {% highlight java %}
 public class ArticleModel {
@@ -77,7 +77,7 @@ public class CommentModel {
 
 }
 {% endhighlight %}
-## Consuming the Response
+### Consuming the Response
 We defined a collection type for the *comment* field as *List&lt;CommentModel&gt;*. Thus, we can map multiple comments into a single field automatically because *Jackson* already does the heavy lifting for us:
 {% highlight java %}
 String jsonString = "{
@@ -109,7 +109,7 @@ Certainly, this configuration resolves the multiple comment values unless the re
 
 Consequently, we need to define a custom deserializer to handle both single and multiple values at once.
 
-## Custom Deserializers for Jackson
+### Custom Deserializers for Jackson
 *StdDeserializer* is an abstract type and also the base class for common deserializers in Jackson.
 
 Therefore, to implement a custom deserialization behavior, we will create an implementation of *StdDeserializer*. This behavior will be responsible for adding any single value to the list as the same as multiple values are being added automatically by Jackson.
@@ -167,7 +167,7 @@ public List deserialize(JsonParser p, DeserializationContext ctxt)
     return commentList;
 }
 {% endhighlight %}
-## Deserialization Features in Jackson
+### Deserialization Features in Jackson
 Although writing a custom deserializer offers us great flexibility, there are lots of features bundled in the Jackson Library for conversions. **Jackson predefined features provide practical ways to customize both serialization and deserialization.**
 
 Hopefully, *ACCEPT_SINGLE_VALUE_AS_ARRAY* feature does the exact job for our use-case. Certainly, we could use it for the sake of simplicity:
@@ -190,12 +190,13 @@ Thus, this will automatically add any single value of *CommentModel* to our list
 
 We can always have a chance to check the full list of features over on the [source code](https://fasterxml.github.io/jackson-annotations/javadoc/2.9/com/fasterxml/jackson/annotation/JsonFormat.Feature.html).
 
-## Going Further with Generic Deserializers
+### Going Further with Generic Deserializers
 We can write generic deserializers for different requirements that we couldn't handle by predefined features. Besides, for the benefit of reusability, we can go further to refactor our code not to create new deserializers for each element type.
 
 So, we'll implement a new class as *SingleAwareListDeserializer* to handle the deserialization in a more customizable way:
 {% highlight java %}
-public class SingleAwareListDeserializer extends StdDeserializer<List> implements ContextualDeserializer {
+public class SingleAwareListDeserializer extends StdDeserializer<List>
+  implements ContextualDeserializer {
 
     private Class<?> contentClassType;
 
@@ -208,19 +209,22 @@ public class SingleAwareListDeserializer extends StdDeserializer<List> implement
     }
 
     @Override
-    public JsonDeserializer<?> createContextual(DeserializationContext ctxt, BeanProperty property) throws JsonMappingException {
+    public JsonDeserializer<?> createContextual(
+      DeserializationContext ctxt, BeanProperty property) throws JsonMappingException {
         // we use ContextualDeserializer to obtain content class type
         contentClassType = property.getType().getContentType().getRawClass();
         return this;
     }
 
     @Override
-    public List deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+    public List deserialize(JsonParser p, DeserializationContext ctxt)
+      throws IOException, JsonProcessingException {
 
         List list = new ArrayList<>();
 
         JsonToken token = p.currentToken();
-        // if token is array type then perform object deserialization to each element element
+        // if token is array type
+        // then perform object deserialization to each element element
         if (JsonToken.START_ARRAY.equals(token)) {
             while (p.nextToken() != null) {
                 if (JsonToken.START_OBJECT.equals(p.currentToken())) {
@@ -261,7 +265,7 @@ private List<CommentModel> comments;
 {% endhighlight %}
 As a result, we can provide the same behavior by the *SingleAwareListDeserializer* generically for all types as well.
 
-## Finally
+### Finally
 In this tutorial, **we learned how to handle variable responses in Jackson by using the builtin features and custom deserializers as well**.
 
 All the source code for the examples shown in this tutorial are available [over on GitHub](https://github.com/yavuztas/java-jackson-multivalue).

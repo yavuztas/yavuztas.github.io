@@ -13,7 +13,7 @@ $rs: 20px
 $font-serif: "Ubuntu", -apple-system, "Open Sans", "MundoSans", "Helvetica Neue", Arial, Helvetica, sans-serif
 $font-sans: "Ubuntu", -apple-system, "Open Sans", "MundoSans", "Helvetica Neue", Arial, Helvetica, sans-serif
 
-$post-font-size: 1.125rem
+$post-font-size: 1.1rem
 $post-font-weight: 300
 
 @mixin respond-to($breakpoint)
@@ -27,7 +27,8 @@ $post-font-weight: 300
 main
   display: block
 
-
+strong
+  color: #333332
 
 body
   font-family: $font-sans
@@ -494,7 +495,7 @@ body
       letter-spacing: 0.01em
       margin: 0
       padding-bottom: 25px
-      color: #212121
+      color: black
       -webkit-hyphens: auto
       -moz-hyphens: auto
       hyphens: auto
@@ -734,7 +735,7 @@ body
 
 pre,
 code
-  font-size: 15px
+  font-size: 14px
   border: 1px solid #e8e8e8
   border-radius: 3px
   background-color: #eef
@@ -745,7 +746,7 @@ code
 pre
   tab-size: 4
   padding: 8px 12px
-  overflow-x: scroll
+  overflow-x: auto
   margin: 0
   min-height: 30px
   > code

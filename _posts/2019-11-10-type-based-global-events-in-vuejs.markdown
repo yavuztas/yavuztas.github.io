@@ -21,7 +21,7 @@ Undoubtfully, it wasn't a big surprise to me because **this is mostly what dynam
 
 Today, I am going to show a practical and effective way of using global events in **Vue Framework.**
 
-## A Simple Event Bus in Vue
+### A Simple Event Bus in Vue
 The typical way of implementing a global event bus in Vue is just using the *Vue* object itself:
 {% highlight javascript %}
 // create a Vue instance somewhere you can access globally
@@ -36,7 +36,7 @@ eventBus.$emit("onAppStarted")
 // Super easy, right?
 {% endhighlight %}
 
-## The Problem Coming From Strings
+### The Problem Coming From Strings
 As long as our application has more than a couple of lines, sooner or later, we start stressing to follow which components publish and which others listen to them.
 
 Therefore, we can imagine how hard to identify a simple typo like *onApStarted* instead of *onAppStarted* as an event name in a large  project:
@@ -46,7 +46,7 @@ eventBus.$on("onApStarted", () => {
 })
 {% endhighlight %}
 
-## Implicit Event Parameters
+### Implicit Event Parameters
 Moreover, because we don't define any corresponding type or interface for our event parameters **only God knows what and how many parameters might be for the *onAppStarted* event.**
 
 In order to identify we resent doing this kind of tests everytime we confuse:
@@ -56,12 +56,12 @@ eventBus.$on("onAppStarted", (...args) => {
 })
 {% endhighlight %}
 
-## A Proper Solution Comes From ES6+
+### A Proper Solution Comes From ES6+
 As being a fan of static-typed Java world, whatever language I do, I prefer using types clearly unless it's super unconventional for the specific language.
 
 Thus, I will show a solution to get rid of these string-based event names by using the capabilities **ECMAScript 6** and later offers.
 
-### Defining Event Types
+#### Defining Event Types
 Let's create a separate file called *app-events.js* to define our **event types:**
 {% highlight javascript %}
 /**
@@ -97,14 +97,14 @@ As we can notice, **defining event type classes and parameters in constructor ex
 
 Although it is optional, we recommend keeping comments updated. This provides a way to follow the components which deal with a certain event type.
 
-### Importing Event Types
+#### Importing Event Types
 When we want to use our events, we should import them into our components:
 {% highlight javascript %}
 import {AppStartEvent, CodeChangeEvent} from "@/app-events"
 {% endhighlight %}
 As we specify explicitly every event type we need, **it brings us another important benefit that we can easily identify what events are involved in a component.**
 
-### Registering an Event
+#### Registering an Event
 In order to register our event, simply we use our event types and their static *name* properties:
 {% highlight javascript %}
 import {AppStartEvent} from "@/app-events"
@@ -124,7 +124,7 @@ eventBus.$on(CodeChangeEvent.name, event => {
   console.log(event.code)  
 })
 {% endhighlight %}
-### Publishing an Event
+#### Publishing an Event
 Now we can publish our events by creating a new instance of that event type:
 {% highlight javascript %}
 // no parameters
@@ -134,7 +134,7 @@ eventBus.$emit(AppStartEvent.name, new AppStartEvent())
 eventBus.$emit(CodeChangeEvent.name, new CodeChangeEvent(editor, "some code here..."))
 {% endhighlight %}
 
-## Implementing a Wrapper Class
+### Implementing a Wrapper Class
 Certainly, we may proceed to define a class as *EventBus* and wrap the basic methods of *Vue* instance.
 {% highlight javascript %}
 class EventBus {
@@ -160,7 +160,7 @@ EventBus.listen(AppStartEvent, () => console.log("App Started!"))
 EventBus.publish(new AppStartEvent())
 {% endhighlight %}
 
-## Using as a Plugin
+### Using as a Plugin
 We may prefer to use our *EventBus* as a **Vue Plugin**:
 {% highlight javascript %}
 export default {
@@ -215,11 +215,7 @@ EventBus.listen(AppStartEvent, () => console.log("App Started!"))
 EventBus.publish(new AppStartEvent())
 {% endhighlight %}
 
-## Finally
-In this short tutorial, **I explained how to implement type-based global events and use them in Vue**.
+### Finally
+In this short tutorial, **I explained how to implement type-based global events and use them in Vue.js**.
 
-You can find the plugin [over on GitHub](https://gist.github.com/yavuztas/d1300752057de9314c8614d6a82ccc39).
-
-So, what do you think about this approach?
-
-I would like to see your comments below!
+You can find the code of the sample plugin [over on GitHub](https://gist.github.com/yavuztas/d1300752057de9314c8614d6a82ccc39).
