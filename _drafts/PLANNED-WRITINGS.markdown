@@ -16,12 +16,6 @@ Post about ES6 new syntax *#field*, but also mention about it's breaking some pr
 ## ARTICLE - Java utility article
 Share this article with other channels also
 
-## ARTICLE - Consuming Variable Responses in Jackson
-It is ready just publish it on the channels
-
-## ARTICLE - A Different Approach for Event Handling in Vue.js
-It is ready just publish it on the channels
-
 ## ARTICLE - Bean Validation with configurable constraint values in Spring
 Write about custom validators with parameters from properties file based on this answer:
 https://stackoverflow.com/questions/56920934/spring-bean-validation-with-configurable-constraint-values/56924502#56924502

@@ -1,0 +1,13 @@
+
+### baeldung.com
+1. https://www.baeldung.com/jackson-call-default-serializer-from-custom-serializer
+2. https://www.baeldung.com/hibernate-wherejointable
+3. https://www.baeldung.com/hibernate-parametermessageinterpolator
+4. https://www.baeldung.com/java-print-binary-tree-diagram
+
+### dzone.com
+1. https://dzone.com/articles/consuming-variable-responses-in-gson
+2. https://dzone.com/articles/consuming-variable-responses-in-jackson
+
+### refactoring.io
+coming soon :)
