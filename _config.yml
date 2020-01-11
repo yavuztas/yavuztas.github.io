@@ -29,7 +29,7 @@ future: true
 url: "https://yavuztas.dev" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
-#twitter_handle: '@yavuztas'
+#twitter_handle: '@YavuzSlmTas'
 
 #fill in disqus shortname to use disqus
 disqus: yavuztas-dev
@@ -39,7 +39,7 @@ disqus: yavuztas-dev
 # social icons and sharing options
 social:
   - icon:	twitter
-    url:
+    url: https://twitter.com/YavuzSlmTas
     desc: Follow me on Twitter
     share_desc: Share on Twitter
     share_url: http://twitter.com/share
