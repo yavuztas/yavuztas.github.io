@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The BeanDefinitionOverrideException in Spring Boot 2.1"
+title:  "The BeanDefinitionOverrideException in Spring Boot"
 date:   2020-01-01 14:34:25
 categories: java spring-boot
 tags: regular
@@ -9,11 +9,15 @@ image2: /assets/article_images/java-quiz-questions/java-quiz-mobile.jpg
 ---
 
 ## 1. Introduction
-Spring Boot offers us auto-configuration provisions out of the box to let us orchestrate our beans quickly and practically.
+Although defining beans can be pretty straightforward, it can be difficult to determine the cause of some configuration problems without knowing the defaults Spring Boot provides. A common problem is the *BeanDefinitionOverrideException* that can confuse some developers about the *Bean Overriding* behavior in Spring.
 
-However, it can be tricky to find out the reason for some configuration problems without knowing the defaults Spring Boot brings in.
+In this tutorial, we’ll take a look at Spring’s BeanDefinitionOverrideException and how to handle it.
 
-In this tutorial, we'll explain *BeanDefinitionOverrideException* in Spring Boot.
+--- version 2 ---
+
+The Spring Boot 2.1 upgrade surprised a number of people with unexpected occurances of *BeanDefinitionOverrideException*. It can also confuse some developers and make them wondering about what happened to the *Bean Overriding* behavior in Spring.
+
+In this tutorial, we'll unravel this issue and then see how best to address it.
 
 ## 2. Bean Overriding in Spring
 For each *ApplicationContext* in Spring, beans are identified by their names.
