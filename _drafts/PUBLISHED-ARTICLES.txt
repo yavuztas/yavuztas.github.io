@@ -4,10 +4,12 @@
 2. https://www.baeldung.com/hibernate-wherejointable
 3. https://www.baeldung.com/hibernate-parametermessageinterpolator
 4. https://www.baeldung.com/java-print-binary-tree-diagram
+5. https://www.baeldung.com/spring-boot-bean-definition-override-exception
 
 ### dzone.com
 1. https://dzone.com/articles/consuming-variable-responses-in-gson
 2. https://dzone.com/articles/consuming-variable-responses-in-jackson
+3. https://dzone.com/articles/type-based-global-events-in-vuejs
 
 ### refactoring.io
 coming soon :)

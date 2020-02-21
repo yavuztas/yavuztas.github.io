@@ -11,6 +11,12 @@ e.g. "the Jackson library".
     - So, this is where....
     - In this short tutorial, ....
 
+* For the intro section (alternative), keep the intro to talking about the article's outline, leaving out the expository detail. Generally, an intro contains a thesis or intro statement and the rest of the article contains supporting information. Usually, it's good to include a "why" to draw in the reader, but the rest of the info can wait until later.
+
+A sample intro you might consider would be:
+"The Spring Boot 2.1 upgrade surprised a number of people with unexpected BeanDefinitionOverrideException s. What happened? In this tutorial, we'll unravel this and then see how best to address it."
+The point is to keep most of the technical exposition out of the intro.
+
 * Try to make sure that if you're explaining the context of something, you give an example of what someone might try to do, how the defaults don't meet the need, and therefore what the motivation is for using our method.
 
 * Similarly, when you're explaining things, try to get to a working example as quickly as possible and then explain the detail.
