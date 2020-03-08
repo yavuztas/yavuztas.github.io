@@ -1,0 +1,9 @@
+
+### To checkout a module for your new article
+
+1. Change the current working directory to git/tutorials
+2. Make sure you are on the master branch.
+3. git fetch upstream
+4. git merge upstream/master
+5. git push
+6. git checkout -b BAEL-XXXX master
