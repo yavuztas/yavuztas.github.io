@@ -5,6 +5,7 @@
 3. https://www.baeldung.com/hibernate-parametermessageinterpolator
 4. https://www.baeldung.com/java-print-binary-tree-diagram
 5. https://www.baeldung.com/spring-boot-bean-definition-override-exception
+6. https://www.baeldung.com/jpa-entity-manager-get-reference
 
 ### dzone.com
 1. https://dzone.com/articles/consuming-variable-responses-in-gson
