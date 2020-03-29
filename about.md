@@ -21,9 +21,10 @@ Certainly, I am a strong follower of *test-driven development*, issue tracking, 
 
 Among my recent achievements, I have successfully been a lead developer in two startup projects ([ondestek](https://ondestek.com), [kodris](https://www.kodris.com)) and made great contributions to raise them as the profiting and leading companies in Turkey.
 
-Beyond that, I like sharing my experience, mostly about Java and Spring, writing technical articles to contribute, for developing the *open-source community*.
+Additionally, I have an interest in *gamified concepts* and *game development* for web applications.
 
-As a personal hobby, I have an interest in *gamified concepts* for web applications.
+As a personal hobby, I like sharing my experience, mostly about *Java* and *Spring*, writing technical articles to contribute, for developing the *open-source community*.
+
 
 ### My Publications on Other Websites
 <p></p>
