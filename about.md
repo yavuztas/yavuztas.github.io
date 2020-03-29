@@ -29,6 +29,7 @@ As a personal hobby, I have an interest in *gamified concepts* for web applicati
 <p></p>
 - [baeldung.com/java-print-binary-tree-diagram](https://www.baeldung.com/java-print-binary-tree-diagram){:target="blank"}
 - [baeldung.com/spring-boot-bean-definition-override-exception](https://www.baeldung.com/spring-boot-bean-definition-override-exception){:target="blank"}
+- [baeldung.com/jpa-entity-manager-get-reference](https://www.baeldung.com/jpa-entity-manager-get-reference){:target="blank"}
 - [dzone.com/articles/type-based-global-events-in-vuejs](https://dzone.com/articles/type-based-global-events-in-vuejs){:target="blank"}
 - [dzone.com/articles/consuming-variable-responses-in-jackson](https://dzone.com/articles/consuming-variable-responses-in-jackson){:target="blank"}
 - [dzone.com/articles/consuming-variable-responses-in-gson](https://dzone.com/articles/consuming-variable-responses-in-gson){:target="blank"}
