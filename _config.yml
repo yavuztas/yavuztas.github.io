@@ -5,13 +5,13 @@ plugins:
 
 # Site settings
 title: "Yavuz Tas"
-description: Senior Java Developer
+description: Senior Software Developer
 footer_title: Yavuz is logging...
 footer_description: A bunch of <b>java experience</b> from a <b>java lover</b>
 
 email: hi@yavuztas.dev
 #blog logo
-logo: "/assets/images/avatar1.png"
+logo: "/assets/images/avatar2-colored.jpg"
 float_logo: false # true, false (default)
 
 # blog cover
