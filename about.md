@@ -25,14 +25,10 @@ Additionally, I have an interest in *gamified concepts* and *game development* f
 
 As a personal hobby, I like sharing my experience, mostly about *Java* and *Spring*, writing technical articles to contribute, for developing the *open-source community*.
 
-### My Publications on Other Websites
+### My Articles on Other Websites
 <p></p>
-- [baeldung.com/java-print-binary-tree-diagram](https://www.baeldung.com/java-print-binary-tree-diagram){:target="blank"}
-- [baeldung.com/spring-boot-bean-definition-override-exception](https://www.baeldung.com/spring-boot-bean-definition-override-exception){:target="blank"}
-- [baeldung.com/jpa-entity-manager-get-reference](https://www.baeldung.com/jpa-entity-manager-get-reference){:target="blank"}
-- [dzone.com/articles/type-based-global-events-in-vuejs](https://dzone.com/articles/type-based-global-events-in-vuejs){:target="blank"}
-- [dzone.com/articles/consuming-variable-responses-in-jackson](https://dzone.com/articles/consuming-variable-responses-in-jackson){:target="blank"}
-- [dzone.com/articles/consuming-variable-responses-in-gson](https://dzone.com/articles/consuming-variable-responses-in-gson){:target="blank"}
+- [baeldung.com/author/yavuztas](https://www.baeldung.com/author/yavuztas/){:target="blank"}
+- [dzone.com/users/yavuztas](https://dzone.com/users/3878348/yavuztas.html){:target="blank"}
 
 If you would like to know me better, don't hesitate to strike up a conversation with any channel below:
 <p class="about-social">
