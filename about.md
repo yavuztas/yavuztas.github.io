@@ -19,7 +19,7 @@ Also, I’m experienced about *UI/UX technologies* as well for both server-side 
 
 Certainly, I am a strong follower of *test-driven development*, issue tracking, continuous integration, source code management and above all, a seeker of code quality.
 
-Among my recent achievements, I have successfully been a lead developer in two startup projects ([ondestek](https://ondestek.com), [kodris](https://www.kodris.com)) and made great contributions to raise them as the profiting and leading companies in Turkey.
+Among my recent achievements, I have successfully been a senior java developer in two startup projects ([ondestek](https://ondestek.com), [kodris](https://www.kodris.com)) and made great contributions to raise them as the profiting and leading companies in Turkey.
 
 Additionally, I have an interest in *gamified concepts* and *game development* for web applications.
 
