@@ -12,5 +12,5 @@
 2. https://dzone.com/articles/consuming-variable-responses-in-jackson
 3. https://dzone.com/articles/type-based-global-events-in-vuejs
 
-### refactoring.io
-coming soon :)
+### reflectoring.io
+1. https://reflectoring.io/validate-spring-boot-configuration-parameters-at-startup/
